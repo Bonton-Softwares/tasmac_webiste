@@ -22,7 +22,7 @@ export class OrganizationComponent {
       description: "Additional Chief Secretary to Government, Finance Department, Secretariat, Chennai – 600 009."
     },
     {
-      name: "Tmt. J. Kumaragurubaran, IAS",
+      name: "Thiru. J. Kumaragurubaran, IAS",
       description: "Secretary to Government, Commercial Taxes and Registration Department, Secretariat, Chennai – 600 009."
     },
     {
@@ -30,7 +30,7 @@ export class OrganizationComponent {
       description: "Director of Prohibition and Excise, Chepauk, Chennai – 600 005."
     },
     {
-      name: "Thiru. k. Nanthakumar, IAS",
+      name: "Thiru. K. Nanthakumar, IAS",
       description: "Managing Director, TASMAC Ltd., Egmore, Chennai – 600 008."
     },
     {

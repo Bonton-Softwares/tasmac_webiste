@@ -38,6 +38,7 @@ export class StockAvailabilityComponent {
   expandedRow: number | null = null;
   filteredStockDetails: any
   allStockDetails: any
+  lastUpdate: any = ''
   @HostListener('window:scroll')
   checkScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -74,6 +75,7 @@ export class StockAvailabilityComponent {
   getAllStocks() {
     this.loader.show();
     this.formService.getAllStockDetails().subscribe((res: any) => {
+      this.lastUpdate = res.data[0].last_updated_time
       this.filteredStockDetails = res.data;
       this.stockDetails = res.data;
       this.allStockDetails = res.data;

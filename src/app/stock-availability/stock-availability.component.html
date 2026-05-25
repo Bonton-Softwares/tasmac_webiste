@@ -54,7 +54,7 @@
                         <thead>
                             <tr>
                                 <th colspan="12" class="bg-dark">
-                                    <h2 class="py-0 m-0 text-white text-center">RV Shops Stock Availability</h2>
+                                    <h2 class="py-0 m-0 text-white text-center">RV Shops Stock Availability as on {{lastUpdate}}</h2>
                                 </th>
                             </tr>
                             <tr style="white-space: nowrap;">
@@ -62,7 +62,7 @@
                                 <th>RV Shop No</th>
                                 <th>District Name</th>
                                 <th>Taluk Name</th>
-                                <th>Last Update Date</th>
+                                <!-- <th>Last Update Date</th> -->
                                 <th>View</th>
                             </tr>
                         </thead>
@@ -73,7 +73,7 @@
                                     <td>{{ shop.shopNumber }}</td>
                                     <td>{{ shop.districtName }}</td>
                                     <td>{{ shop.talukaName }}</td>
-                                    <td>{{ shop?.last_updated_time }}</td>
+                                    <!-- <td>{{ shop?.last_updated_time }}</td> -->
                                     <td>{{ expandedRow === i ? '▼' : '►' }}</td>
                                 </tr>
                                 <tr *ngIf="expandedRow === i">
