@@ -62,6 +62,7 @@
                                 <th>RV Shop No</th>
                                 <th>District Name</th>
                                 <th>Taluk Name</th>
+                                <th>Last Update Date</th>
                                 <th>View</th>
                             </tr>
                         </thead>
@@ -72,6 +73,7 @@
                                     <td>{{ shop.shopNumber }}</td>
                                     <td>{{ shop.districtName }}</td>
                                     <td>{{ shop.talukaName }}</td>
+                                    <td>{{ shop?.last_updated_time }}</td>
                                     <td>{{ expandedRow === i ? '▼' : '►' }}</td>
                                 </tr>
                                 <tr *ngIf="expandedRow === i">
