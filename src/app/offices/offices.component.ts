@@ -45,13 +45,14 @@ export class OfficesComponent implements OnInit {
 	}
 
 	getStaffByOffice(staffType: number) {
-		this.selectedOfficeType = staffType
+		this.selectedOfficeType = staffType;
+
 		this.formService.getStaffByOffice(staffType).subscribe((res: any) => {
-			this.staffDetails = res.data.staffs.data.map((staff: any) => ({
+			this.staffDetails = (res?.data?.staffs?.data || []).map((staff: any) => ({
 				...staff,
-				name: staff.firstName.toUpperCase()
+				name: staff.firstName?.toUpperCase() || ''
 			}));
-		})
+		});
 	}
 
 }
