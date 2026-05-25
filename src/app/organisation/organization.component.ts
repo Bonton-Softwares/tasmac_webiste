@@ -14,7 +14,7 @@ export class OrganizationComponent {
   selectedTab: string = 'board';
   boardData = [
     {
-      name: "Thiru. Dheeraj Kumar, IAS",
+      name: "Thiru.  K.Manivasan, IAS",
       description: "The Chairman, TASMAC and Additional Chief Secretary to Government, Home, Prohibition and Excise Department, Secretariat, Chennai – 600 009."
     },
     {
@@ -22,7 +22,7 @@ export class OrganizationComponent {
       description: "Additional Chief Secretary to Government, Finance Department, Secretariat, Chennai – 600 009."
     },
     {
-      name: "Tmt. Shilpa Prabhakar Satish, IAS",
+      name: "Tmt. J. Kumaragurubaran, IAS",
       description: "Secretary to Government, Commercial Taxes and Registration Department, Secretariat, Chennai – 600 009."
     },
     {
