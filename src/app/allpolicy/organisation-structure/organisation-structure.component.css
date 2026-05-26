@@ -1,0 +1,202 @@
+.org-page {
+    background: #f4f7fb;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #02122d;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #667085;
+    margin: 0;
+}
+
+.org-card {
+    background: #fff;
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    overflow: hidden;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #02122d;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.section-header i {
+    color: #00c853;
+    font-size: 24px;
+}
+
+.chart-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0;
+    display: block;
+    scroll-behavior: smooth;
+}
+
+.chart-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.chart-wrapper::-webkit-scrollbar-track {
+    background: #e7ebf1;
+    border-radius: 10px;
+}
+
+.chart-wrapper::-webkit-scrollbar-thumb {
+    background: #02122d;
+    border-radius: 10px;
+}
+
+/* PrimeNG Organization Chart */
+
+:host ::ng-deep .p-organizationchart {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    padding: 0 30px;
+}
+
+:host ::ng-deep .p-organizationchart table {
+    margin: 0;
+    border-spacing: 25px;
+}
+
+:host ::ng-deep .p-organizationchart-node-content {
+
+    background: #02122d !important;
+
+    color: #fff !important;
+
+    border: none !important;
+
+    border-radius: 18px !important;
+
+    padding: 15px !important;
+
+    min-width: 220px;
+
+    max-width: 220px;
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+
+    overflow: hidden;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .15);
+
+    transition: all .3s ease;
+}
+
+:host ::ng-deep .p-organizationchart-node-content:hover {
+
+    background: #0b2e73 !important;
+
+    transform: translateY(-5px);
+}
+
+/* Connection lines */
+
+:host ::ng-deep .p-organizationchart-line-down {
+    background: #00c853 !important;
+    width: 2px !important;
+}
+
+:host ::ng-deep .p-organizationchart-line-left {
+    border-right: 2px solid #00c853 !important;
+}
+
+:host ::ng-deep .p-organizationchart-line-right {
+    border-left: 2px solid #00c853 !important;
+}
+
+:host ::ng-deep .p-organizationchart-line-top {
+    border-top: 2px solid #00c853 !important;
+}
+
+@media(max-width:992px) {
+
+    .org-page {
+        padding: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+    .section-header {
+        font-size: 20px;
+    }
+
+    :host ::ng-deep .p-organizationchart-node-content {
+
+        min-width: 180px;
+
+        max-width: 180px;
+
+        height: 80px;
+
+        font-size: 12px;
+
+        padding: 10px !important;
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .org-page {
+        padding: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .section-header {
+        font-size: 18px;
+    }
+
+}

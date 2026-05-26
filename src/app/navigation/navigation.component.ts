@@ -19,23 +19,35 @@ export class NavigationComponent implements OnInit {
 
 	menuItems = [
 		{ id: 1, title: 'Home', link: '/home' },
-		{ id: 3, title: 'Our Presence', link: '/offices' },
 		{
-			id: 4,
-			title: 'TASMAC at a Glance',
+			id: 3,
+			title: 'About Us',
 			isDropdown: true,
 			subMenu: [
-				{ id: 11, title: 'Profile', link: '/profile' },
-				{ id: 12, title: 'Organization', link: '/organisation-structure' },
-				{ id: 13, title: 'Board of Directors', link: '/boardofdirector' }
+				{ id: 11, title: 'Organization', link: '/profile' },
+				{ id: 12, title: 'Structure', link: '/organisation-structure' },
+				{ id: 13, title: 'Board of Directors', link: '/boardofdirector' },
+				{ id: 11, title: 'Offices', link: '/offices' },
+				{ id: 11, title: 'Reports', link: '/reports' },
 			]
 		},
+		// {
+		// 	id: 4,
+		// 	title: 'TASMAC at a Glance',
+		// 	isDropdown: true,
+		// 	subMenu: [
+		// 		{ id: 11, title: 'Profile', link: '/profile' },
+		// 		{ id: 12, title: 'Organization', link: '/organisation-structure' },
+		// 		{ id: 13, title: 'Board of Directors', link: '/boardofdirector' }
+		// 	]
+		// },
 		{ id: 6, title: 'Stock Availability', link: '/stock-availability' },
-		{ id: 6, title: 'Products', link: '/brands' },
+		{ id: 6, title: 'MRP Price List', link: '/brands' },
 		{ id: 8, title: 'Suppliers', link: '/suppliers' },
 		{ id: 9, title: 'Shop Locator', link: '/shoplocator' },
-		{ id: 2, title: 'About', link: '/about' },
-		{ id: 10, title: 'Contact', link: '/contact' }
+		{ id: 9, title: 'Grievances', link: '/grievances' },
+		// { id: 2, title: 'About', link: '/about' },
+		// { id: 10, title: 'Contact', link: '/contact' }
 	];
 
 	constructor(

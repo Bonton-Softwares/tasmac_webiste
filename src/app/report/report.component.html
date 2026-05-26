@@ -1,0 +1,234 @@
+<div class="report-page">
+
+    <div class="container-fluid">
+
+        <!-- Header -->
+
+        <div class="heading-section">
+
+            <h1>
+                Reports & Downloads
+            </h1>
+
+            <p>
+                Access official documents, annual reports,
+                government orders and regulatory guidelines.
+            </p>
+
+        </div>
+
+
+        <div class="row">
+
+            <!-- LEFT SIDEBAR -->
+
+            <div class="col-lg-3">
+
+                <!-- Search -->
+
+                <div class="filter-card">
+
+                    <h5>
+                        Search Documents
+                    </h5>
+
+                    <input type="text" class="form-control" placeholder="Search here..." [(ngModel)]="searchText">
+
+                </div>
+
+
+
+                <!-- Category -->
+
+                <div class="filter-card">
+
+                    <h5>
+                        Filter by Category
+                    </h5>
+
+                    <div class="radio-item" *ngFor="let category of categories">
+
+                        <input type="radio" name="category" [value]="category" [(ngModel)]="selectedCategory">
+
+                        <label>
+
+                            {{category}}
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Year -->
+
+                <div class="filter-card">
+
+                    <h5>
+                        Filter by Year
+                    </h5>
+
+                    <select class="form-select" [(ngModel)]="selectedYear">
+
+                        <option *ngFor="let year of years" [value]="year">
+
+                            {{year}}
+
+                        </option>
+
+                    </select>
+
+                    <button class="clear-btn" (click)="clearFilters()">
+
+                        Clear Filters
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT CONTENT -->
+
+            <div class="col-lg-9">
+
+                <!-- Header -->
+
+                <div class="result-header">
+
+                    <div>
+
+                        Showing
+                        <b>
+                            {{filteredReports.length}}
+                        </b>
+                        Results
+
+                    </div>
+
+                    <div>
+
+                        Sort by:
+                        <b>
+                            Newest First
+                        </b>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Report Cards -->
+
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-6 mb-4" *ngFor="let report of paginatedReports">
+
+                        <div class="report-card">
+
+                            <div class="top">
+
+                                <span class="badge">
+
+                                    {{report.type}}
+
+                                </span>
+
+                                <span>
+
+                                    {{report.date}}
+
+                                </span>
+
+                            </div>
+
+
+                            <h4>
+
+                                {{report.title}}
+
+                            </h4>
+
+
+                            <p>
+
+                                {{report.description}}
+
+                            </p>
+
+
+                            <div class="bottom">
+
+                                <small>
+
+                                    PDF • {{report.size}}
+
+                                </small>
+
+
+                                <button class="download-btn">
+
+                                    Download
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Empty State -->
+
+                <div *ngIf="filteredReports.length===0" class="text-center mt-5">
+
+                    <h5>
+                        No reports found
+                    </h5>
+
+                </div>
+
+
+
+                <!-- Pagination -->
+
+                <div class="pagination-wrapper" *ngIf="totalPages>1">
+
+                    <button (click)="changePage(currentPage-1)">
+
+                        ‹
+
+                    </button>
+
+
+                    <button *ngFor="let page of [].constructor(totalPages); let i=index"
+                        [class.active]="currentPage===i+1" (click)="changePage(i+1)">
+
+                        {{i+1}}
+
+                    </button>
+
+
+                    <button (click)="changePage(currentPage+1)">
+
+                        ›
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -19,15 +19,37 @@ import { RouterLink } from '@angular/router';
     ],
 })
 export class FooterComponent implements OnInit {
-	// footer$: Observable<IFooter> = new Observable<IFooter>();
-	footer$: Observable<Footer> = new Observable();
-	constructor(private config: ConfigService) {}
+    // footer$: Observable<IFooter> = new Observable<IFooter>();
+    visitorCount: number = 0;
+    lastUpdated: string = '';
+    footer$: Observable<Footer> = new Observable();
+    constructor(private config: ConfigService) { }
 
-	ngOnInit() {
-		this.getPageData('pages', 6);
-	}
+    ngOnInit() {
+        this.getPageData('pages', 6);
+        this.generateRandomData();
+    }
 
-	getPageData(database: string, id?: number): void {
-		this.footer$ = this.config.getSettings(database, id);
-	}
+    getPageData(database: string, id?: number): void {
+        this.footer$ = this.config.getSettings(database, id);
+    }
+
+    generateRandomData() {
+        this.visitorCount =
+            Math.floor(
+                Math.random() * (999999 - 100000) + 100000
+            );
+        const today = new Date();
+
+        this.lastUpdated =
+            today.toLocaleDateString(
+                'en-GB',
+                {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                }
+            );
+
+    }
 }
