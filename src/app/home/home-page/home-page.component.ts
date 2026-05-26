@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { OrganizationComponent } from "../../organisation/organization.component";
 import { AboutComponent } from "../../abouts/about.component";
 import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-home-page',
@@ -33,6 +34,7 @@ import { HttpClient } from '@angular/common/http';
 	],
 })
 export class HomePageComponent implements OnInit {
+	mapUrl!: SafeResourceUrl;
 	private shopUrl = 'assets/tasmac-shops.json'
 	header$: Observable<Header>;
 	selectedOfficeData: any;
@@ -42,7 +44,7 @@ export class HomePageComponent implements OnInit {
 	progressValue: number = 0;
 	targetValue: number = 48; // Set your target value here
 	shopData: any
-	constructor(private config: ConfigService, private http: HttpClient, private router: Router) { }
+	constructor(private config: ConfigService, private http: HttpClient, private router: Router, private sanitizer: DomSanitizer) { }
 
 	@HostListener('window:scroll')
 	checkScroll() {
@@ -73,6 +75,77 @@ export class HomePageComponent implements OnInit {
 			this.shopData = res
 			console.log(this.shopData.length)
 		})
+		this.loadDefaultMap();
+	}
+
+	loadDefaultMap() {
+
+		this.mapUrl =
+			this.sanitizer.bypassSecurityTrustResourceUrl(
+				'https://maps.google.com/maps?q=Chennai&t=&z=11&ie=UTF8&iwloc=&output=embed'
+			);
+
+	}
+
+	findNearbyShop() {
+
+		if (!navigator.geolocation) {
+
+			alert(
+				'Geolocation is not supported'
+			);
+
+			return;
+		}
+
+		navigator.geolocation.getCurrentPosition(
+
+			(position) => {
+
+				const latitude =
+					position.coords.latitude;
+
+				const longitude =
+					position.coords.longitude;
+
+
+				// Search nearby TASMAC shops
+
+				this.mapUrl =
+					this.sanitizer
+						.bypassSecurityTrustResourceUrl(
+
+							`https://maps.google.com/maps?q=TASMAC+near+${latitude},${longitude}&z=14&output=embed`
+
+						);
+
+				setTimeout(() => {
+
+					document
+						.getElementById('shopSection')
+						?.scrollIntoView({
+
+							behavior: 'smooth',
+							block: 'start'
+
+						});
+
+				}, 300);
+
+			},
+
+			(error) => {
+
+				console.log(error);
+
+				alert(
+					'Please allow location access'
+				);
+
+			}
+
+		);
+
 	}
 
 	runProgress() {

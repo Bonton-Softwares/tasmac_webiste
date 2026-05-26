@@ -1,23 +1,47 @@
-<div class="container mb-4">
-    <div class="tab-content pt-4" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="social-box">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 mt-2 col-xs-12 text-center" *ngFor="let data of boardData">
-                            <div class="box shadow-lg border">
-                                <i class="fa fa-user fa-3x text-red" aria-hidden="true"></i>
-                                <div class="box-title">
-                                    <h3>{{data.name}}</h3>
-                                </div>
-                                <div class="box-text">
-                                    <span>{{data.description}}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="organization-container">
+
+    <div class="page-header">
+
+        <h1>
+            Board Of Directors
+        </h1>
+
+        <p>
+            Tamil Nadu State Marketing Corporation Limited
+        </p>
+
     </div>
+
+    <div class="row g-4">
+
+        <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let data of boardData">
+
+            <div class="member-card">
+
+                <div class="member-icon">
+
+                    <i class="fa fa-user">
+                    </i>
+
+                </div>
+
+
+                <div class="member-content">
+
+                    <h3>
+                        {{data.name}}
+                    </h3>
+
+                    <p>
+                        {{data.description}}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

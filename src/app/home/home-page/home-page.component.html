@@ -1,171 +1,531 @@
 @if (header$ | async; as header) {
-<div class="container-fluid mt-2">
-	<div class="row align-items-center">
-		<div class="col-md-5 mt-4">
-			<div class="section-heading text-center">
-				<!-- <p class="mb-1 pb-0">Tamil Nadu State Marketing Corporation Limited.</p> -->
-				<h1 class="mb-1 pb-0 fw-bold" style="color: #DD241A;">Tamil Nadu State Marketing Corporation Limited.
-				</h1>
-				<p class="text-red mt-1">(A Government of Tamilnadu Undertaking)</p>
-				<!-- <a href="http://www.tenders.tn.gov.in/innerpage.asp?choice=cr7&id=136" target="_blank" rel="noopener noreferrer">
-					<button type="button" class="btn btn-danger btn-sm">
-						Tender Details
-					</button>
-				</a>
-				<button type="button" class="btn btn-outline-danger btn-sm ms-2" routerLink="/gallery">
-					Events
-				</button> -->
-				<div class="mb-2" style="display: flex;justify-content: space-around;">
-					<div>
-						<div style="font-weight: 600;color: #000;">Toll-Free</div>
-						<span><a href="tel:18004252015">18004252015</a></span>
-					</div>
-					<div>
-						<div style="font-weight: 600;">Complaint in whatsapp number</div>
-						<div style="cursor: pointer;color: #000;">
-							<!-- (click)="raiserComplain('7397720230')" | (click)="raiserComplain('7397720235')" -->
-							<span><a href="tel:7397720230">7397720230</a></span>
-						</div>
-					</div>
-				</div>
-				<div>
-					<app-ticker></app-ticker>
-				</div>
-			</div>
+<section class="hero-section">
+
+	<!-- Top Alert Bar -->
+	<div class="top-strip">
+		<div class="alert-icon">
+			<i class="bi bi-exclamation-triangle-fill"></i>
 		</div>
-		<div class="col-md-7">
-			<!-- <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-				<div class="carousel-inner"> -->
-			<div class="carousel-item active" style="background-image: url('assets/images/banner/tasmacelite.jpg')">
-				<div class="d-block w-100 carousel-item-content"></div>
-			</div>
-			<!-- <div class="carousel-item" style="background-image: url('assets/images/Tasmac-store-pic2.jpg')">
-						<div class="d-block w-100 carousel-item-content"></div>
-					</div>
-					<div class="carousel-item" style="background-image: url('assets/images/maxresdefault.jpg')">
-						<div class="d-block w-100 carousel-item-content"></div>
-					</div>
-					<div class="carousel-item" style="background-image: url('assets/images/Tasmac-store-pic4.jpg')">
-						<div class="d-block w-100 carousel-item-content"></div>
-					</div>
-				</div>
-				<button id="prevButton" class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel"
-					data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel"
-					data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div> -->
-		</div>
-	</div>
-</div>
-<!-- <div class="container-fluid" style="background-color: #ebebeb;">
-	<div class="row">
-		<div class="col py-2">
+
+		<div class="complaint-text">
 			<app-ticker></app-ticker>
 		</div>
 	</div>
-</div> -->
-<div class="container text-center py-4">
-	<div class="row align-items-center">
-		<div class="col-md-12">
-			<h3>Our presence across the state</h3>
-			<div class="row pt-3">
-				<div class="col-md-3 text-center">
-					<div class="d-flex justify-content-center" style="cursor: pointer;" (click)="routePrescense(2)">
-						<div class="progress blue">
-							<span class="progress-left">
-								<span class="progress-bar"></span>
-							</span>
-							<span class="progress-right">
-								<span class="progress-bar"></span>
-							</span>
-							<div class="progress-value">5</div>
-						</div>
-					</div>
-					<p class="mb-0 fw-bold">Regional Offices</p>
+
+	<div class="container-fluid hero-content">
+
+		<div class="row align-items-center">
+
+			<!-- Left Content -->
+			<div class="col-lg-7">
+
+				<div class="gov-badge">
+					<i class="bi bi-patch-check"></i>
+					A Government of Tamil Nadu Undertaking
 				</div>
-				<div class="col-md-3 text-center">
-					<div class="d-flex justify-content-center" style="cursor: pointer;" (click)="routePrescense(3)">
-						<div class="progress yellow">
-							<span class="progress-left">
-								<span class="progress-bar"></span>
-							</span>
-							<span class="progress-right">
-								<span class="progress-bar"></span>
-							</span>
-							<div class="progress-value">38</div>
+
+				<h1 class="hero-title">
+					Tamil Nadu State Marketing
+					Corporation Limited.
+				</h1>
+
+				<p class="hero-description">
+					Committed to regulated distribution,
+					transparent pricing, and ensuring public
+					safety across Tamil Nadu through robust
+					governance and digital accessibility.
+				</p>
+
+				<div class="contact-info">
+
+					<div class="contact-box">
+
+						<div class="contact-title">
+							Toll-Free
 						</div>
+
+						<a href="tel:18004252015">
+							18004252015
+						</a>
+
 					</div>
-					<p class="mb-0 fw-bold">District Manager Offices</p>
-				</div>
-				<div class="col-md-3 text-center">
-					<div class="d-flex justify-content-center" style="cursor: pointer;" (click)="routePrescense(4)">
-						<div class="progress green">
-							<span class="progress-left">
-								<span class="progress-bar"></span>
-							</span>
-							<span class="progress-right">
-								<span class="progress-bar"></span>
-							</span>
-							<div class="progress-value">43</div>
+
+					<div class="contact-box">
+
+						<div class="contact-title">
+							Complaint in WhatsApp Number
 						</div>
+
+						<a href="https://wa.me/917397720230" target="_blank">
+							7397720230
+						</a>
+
 					</div>
-					<p class="mb-0 fw-bold">Depots</p>
+
 				</div>
-				<div class="col-md-3 text-center">
-					<div class="d-flex justify-content-center">
-						<div class="progress red">
-							<span class="progress-left">
-								<span class="progress-bar"></span>
-							</span>
-							<span class="progress-right">
-								<span class="progress-bar"></span>
-							</span>
-							<div class="progress-value">
-								<span style="font-size: 20px;">4829 +</span>
+
+				<div class="hero-buttons">
+
+					<button class="btn shop-btn" (click)="findNearbyShop()">
+
+						<i class="bi bi-geo-alt-fill me-2"></i>
+
+						Find a Shop
+
+					</button>
+
+					<a class="btn tender-btn" href="https://tntenders.gov.in/nicgep/app" target="_blank">
+
+						View Tenders
+
+						<i class="fa fa-external-link ms-2"></i>
+
+					</a>
+				</div>
+
+			</div>
+
+			<div class="col-lg-5">
+
+				<div class="notice-card">
+
+					<div class="card-header-custom">
+
+						<div class="notice-title">
+
+							<i class="bi bi-megaphone-fill"></i>
+
+							<span>Updates & Notices</span>
+
+						</div>
+
+						<a class="view-all" routerLink="/noticeboard">
+							VIEW ALL
+						</a>
+
+					</div>
+
+					<div class="notice-scroll-container">
+
+						<div class="notice-scroll">
+
+							<div class="notice-item important-card">
+
+								<div class="notice-top">
+
+									<span class="notice-badge important">
+										Application
+									</span>
+
+									<span class="notice-date">
+										Latest
+									</span>
+
+								</div>
+
+								<h5>
+									Registration of Indian Made Liquor Brands
+								</h5>
+
+								<p>
+									Application form for registration of Indian made scotch whisky,
+									Indian made whisky, domestic wine, vodka, gin, rum, brandy,
+									tequila and beer brands with TASMAC.
+								</p>
+
 							</div>
+
+
+							<div class="notice-item new-card">
+
+								<div class="notice-top">
+
+									<span class="notice-badge new">
+										Registration
+									</span>
+
+									<span class="notice-date">
+										Latest
+									</span>
+
+								</div>
+
+								<h5>
+									Registration of Imported Foreign Liquor (IFL)
+								</h5>
+
+								<p>
+									Offer form for registration of Imported Foreign Liquor (IFL)
+									brands with TASMAC.
+								</p>
+
+							</div>
+
+
+							<div class="notice-item urgent-card">
+
+								<div class="notice-top">
+
+									<span class="notice-badge urgent">
+										Tamil
+									</span>
+
+									<span class="notice-date">
+										PDF
+									</span>
+
+								</div>
+
+								<h5>
+									Code for Prevention of Frauds (தமிழ்)
+								</h5>
+
+								<p>
+									Tamil version of fraud prevention and awareness guidelines.
+								</p>
+
+							</div>
+
+
+							<div class="notice-item important-card">
+
+								<div class="notice-top">
+
+									<span class="notice-badge important">
+										English
+									</span>
+
+									<span class="notice-date">
+										PDF
+									</span>
+
+								</div>
+
+								<h5>
+									Code for Prevention of Frauds (English)
+								</h5>
+
+								<p>
+									English version of fraud prevention and awareness guidelines.
+								</p>
+
+							</div>
+
+
+							<div class="notice-item new-card">
+
+								<div class="notice-top">
+
+									<span class="notice-badge new">
+										Act
+									</span>
+
+									<span class="notice-date">
+										1937
+									</span>
+
+								</div>
+
+								<h5>
+									TN Prohibition Act 1937 (தமிழ்)
+								</h5>
+
+								<p>
+									Tamil version of Tamil Nadu Prohibition Act 1937.
+								</p>
+
+							</div>
+
+
+							<div class="notice-item urgent-card">
+
+								<div class="notice-top">
+
+									<span class="notice-badge urgent">
+										Act
+									</span>
+
+									<span class="notice-date">
+										1937
+									</span>
+
+								</div>
+
+								<h5>
+									TN Prohibition Act 1937 (English)
+								</h5>
+
+								<p>
+									English version of Tamil Nadu Prohibition Act 1937.
+								</p>
+
+							</div>
+
 						</div>
+
 					</div>
-					<p class="mb-0 fw-bold">Retail Outlets</p>
+
 				</div>
+
 			</div>
+
 		</div>
-		<!-- <div class="col-md-4">
-			<h4 class="mb-3 fw-bold">Downloads</h4>
-			<div class="card">
-				<div class="card-body">
-					<div class="d-flex align-items-center justify-content-between">
-						<button type="button" class="btn btn-success btn-sm">
-							Annual Reports
-						</button>
-						<button type="button" class="btn btn-outline-success btn-sm ms-2">
-							Forms
-						</button>
-					</div>
-				</div>
-			</div>
-		</div> -->
+
 	</div>
+
+</section>
+<div class="shop-section" id="shopSection">
+
+	<!-- Heading -->
+	<div class="text-center mb-5">
+
+		<h1 class="main-title">
+			Shop Locator & Stock Inquiry
+		</h1>
+
+		<p class="sub-title">
+			Verify MRP, Check Live Stock, and Find Nearby Stores Instantly
+		</p>
+
+	</div>
+
+	<!-- Locator Area -->
+
+	<div class="row locator-wrapper">
+
+		<!-- Map -->
+
+		<div class="col-lg-6 p-0">
+
+			<div class="map-section">
+
+				<iframe width="100%" height="100%" frameborder="0" style="border:0" loading="lazy" allowfullscreen
+					[src]="mapUrl">
+
+				</iframe>
+
+			</div>
+
+		</div>
+
+
+		<!-- Search Panel -->
+
+		<div class="col-lg-6">
+
+			<div class="search-panel">
+
+				<div class="tab-container">
+
+					<button class="tab-btn active">
+						By District
+					</button>
+
+					<button class="tab-btn">
+						By Product
+					</button>
+
+				</div>
+
+
+				<div class="mt-4">
+
+					<label>Select District</label>
+
+					<select class="form-select">
+
+						<option>
+							Chennai
+						</option>
+
+						<option>
+							Coimbatore
+						</option>
+
+						<option>
+							Madurai
+						</option>
+
+					</select>
+
+				</div>
+
+
+				<div class="search-box mt-3">
+
+					<i class="bi bi-search"></i>
+
+					<input type="text" placeholder="Search Shop Code or Area...">
+
+				</div>
+
+
+				<div class="shop-card">
+
+					<div class="shop-header">
+
+						<small>
+							Shop Code: 10452
+						</small>
+
+						<span class="status">
+
+							<i class="bi bi-circle-fill"></i>
+
+							Open
+
+						</span>
+
+					</div>
+
+
+					<div class="shop-body">
+
+						<div>
+
+							<h6>
+								Anna Nagar West
+							</h6>
+
+							<span>
+								Stock Level:
+								<b class="text-success">
+									Adequate
+								</b>
+							</span>
+
+						</div>
+
+						<a>
+							View MRP List →
+						</a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- Tender section -->
+
+	<!-- <div class="tender-section">
+
+		<div class="heading">
+
+			<h3>
+
+				<i class="bi bi-megaphone"></i>
+
+				Active Tenders
+
+			</h3>
+
+			<a>
+				View All Tenders
+			</a>
+
+		</div>
+
+
+		<div class="row">
+
+			<div class="col-lg-4">
+
+				<div class="tender-card">
+
+					<small>
+						Ref: TN/TAS/24-105
+					</small>
+
+					<h6>
+						Procurement of Security Services for Depots
+					</h6>
+
+					<div class="bottom">
+
+						<span class="danger">
+							⏰ Closes: 2 Days
+						</span>
+
+						<i class="bi bi-download"></i>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<div class="col-lg-4">
+
+				<div class="tender-card">
+
+					<small>
+						Ref: TN/TAS/24-102
+					</small>
+
+					<h6>
+						Transportation Services for Madurai Region
+					</h6>
+
+					<div class="bottom">
+
+						<span>
+							⏰ Closes: 12 Nov
+						</span>
+
+						<i class="bi bi-download"></i>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<div class="col-lg-4">
+
+				<div class="tender-card">
+
+					<small>
+						Ref: TN/TAS/24-098
+					</small>
+
+					<h6>
+						Supply of IT Hardware for Zonal Offices
+					</h6>
+
+					<div class="bottom">
+
+						<span>
+							⏰ Closes: 15 Nov
+						</span>
+
+						<i class="bi bi-download"></i>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div> -->
+
 </div>
 
-<div class="container-fluid my-3 bg-light122">
-	<app-about></app-about>
-</div>
-<div class="container">
-	<app-organization></app-organization>
-</div>
-
-<main>
+<!-- <main>
 	<app-office-details *ngIf="selectedOfficeData" [officeData]="selectedOfficeData"></app-office-details>
 	<div class="scroll-to-top" [ngClass]="{'show': isShow}" (click)="scrollToTop()">
 		↑
 	</div>
-</main>
+</main> -->
 
 <!-- <app-about-page></app-about-page> -->
 <!-- <app-services-page></app-services-page> -->

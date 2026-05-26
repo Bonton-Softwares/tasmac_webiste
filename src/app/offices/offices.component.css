@@ -1,161 +1,228 @@
-/* General Styles for Home Page */
-main {
-  padding: 20px;
-  background-color: #f0f4f8; /* Light background color for the main content */
-}
-
-/* Our Offices Section */
 .our-offices {
-  background-color: #f0f4f8;
-  padding: 2rem;
+  background: #f4f7fb;
+  padding: 40px 0;
 }
 
-.our-offices h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333; /* Dark color for better readability */
-  text-transform: uppercase;
+.office-header {
   text-align: center;
-  width: 100%; /* Full width to center the heading */
+  margin-bottom: 30px;
 }
 
-/* Office Details Container */
-.office-details {
+.office-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #02122d;
+  margin-bottom: 10px;
+}
+
+.office-header p {
+  color: #667085;
+  margin: 0;
+}
+
+.office-tabs {
+
   display: flex;
-  justify-content: flex-start; /* Align items to the start for a sidebar-like layout */
-  gap: 1rem; /* Space between items */
-  position: relative;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 30px;
 }
 
-/* Individual Office Item as Navbar Link */
 .office-item {
-  position: relative;
-  background-color: #fff;
-  border-radius: 4px; /* Slightly rounded corners for a button-like appearance */
-  padding: 0.7rem 2rem;
-  text-align: center;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 25px;
+
+  background: #fff;
+
+  border-radius: 40px;
+
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333; /* Default text color */
-  text-transform: uppercase;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  text-decoration: none; /* Remove underline */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+
+  font-weight: 600;
+
+  transition: .3s;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, .08);
 }
 
-/* Underline Effect */
-.office-item::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0%; /* Default: no underline */
-  height: 3px; /* Height of the underline */
-  background-color: #ED242C; /* Color of the underline */
-  transition: width 0.3s ease; /* Transition for underline width */
+.office-item i {
+  color: #02122d;
 }
 
-/* Hover and Active Effects */
-.office-item:hover::after {
-  width: 100%; /* Underline expands on hover */
+.office-item:hover {
+
+  transform: translateY(-3px);
 }
 
-/* Highlight the Selected Tab */
 .office-item.active {
-  background-color: #ED242C; /* Background color for the active tab */
-  color: #fff; /* Text color for the active tab */
-  /* border: 2px solid #ED242C;  */
+
+  background: #02122d;
+
+  color: #fff;
 }
 
-.office-item.active::after {
-  width: 100%; /* Ensure underline is full width for the active tab */
-  background-color: #fff; /* Color of the underline for the active tab */
+.office-item.active i {
+
+  color: #00c853;
 }
 
-/* Border Below Tabs */
-.office-details::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px; /* Thickness of the border line */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 100%); /* Gradient effect */
-  z-index: -1; /* Place the border line behind the tabs */
+.staff-card {
+
+  background: #fff;
+
+  border-radius: 25px;
+
+  padding: 25px;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, .08);
 }
 
-/* Content Area */
-.content-area {
-  padding: 1rem;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.table-title {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
 }
 
-/* Tables for Regional and District Offices */
-.office-table {
+.table-title h4 {
+
+  margin: 0;
+
+  font-weight: 700;
+
+  color: #02122d;
+}
+
+.table-title i {
+
+  color: #00c853;
+
+  margin-right: 10px;
+}
+
+.staff-count {
+
+  background: #02122d;
+
+  padding: 8px 15px;
+
+  border-radius: 30px;
+
+  color: #fff;
+}
+
+.modern-table {
+
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
 }
 
-.office-table th, .office-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+.modern-table th {
+
+  background: #02122d;
+
+  color: #fff;
+
+  padding: 16px;
 }
 
-.office-table th {
-  background-color: #f4f4f4;
-  font-weight: bold;
+.modern-table td {
+
+  padding: 15px;
+
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.office-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+.modern-table tbody tr {
+
+  transition: .3s;
 }
 
-.office-table tr:hover {
-  background-color: #f1f1f1;
+.modern-table tbody tr:hover {
+
+  background: #f7f9fd;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .office-details {
+.name-cell {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.avatar {
+
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #02122d;
+
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.designation {
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  background: #e7f8ee;
+
+  color: #00a651;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media(max-width:768px) {
+
+  .office-header h2 {
+    font-size: 28px;
+  }
+
+  .office-tabs {
+
     flex-direction: column;
   }
 
   .office-item {
-    width: 100%; /* Full width on smaller screens */
-    text-align: center;
+
+    justify-content: center;
   }
-}
 
-.scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none; /* Initially hidden */
-  transition: opacity 0.3s ease-in-out;
-}
+  .table-title {
 
-.scroll-to-top.show {
-  display: block; /* Show when needed */
-  opacity: 0.8;
-}
+    flex-direction: column;
+    gap: 15px;
+  }
 
-.scroll-to-top:hover {
-  opacity: 1;
-}
-
-.text {
-  font-size: 0.9rem;
 }

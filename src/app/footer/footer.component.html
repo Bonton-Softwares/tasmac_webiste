@@ -1,109 +1,206 @@
 @if (footer$ | async; as footer) {
-<footer class="bg-dark bg-gradient text-white py-3">
-  <div class="container text-center text-md-start">
-    <div class="row text-center text-md-start">
-      <div class="col-md-3 text-center mt-3">
-        <!-- <h2 class="text-uppercase mb-0 fw-bold text-danger" style="font-family: 'Bungee Tint', sans-serif;">TASMAC</h2> -->
-        <img src="assets/images/logo/logo.jpg" height="35">
-        <p class="fs-6 mt-2">Tamil Nadu State Marketing Corporation Limited.</p>
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Logo Section -->
+
+      <div class="col-lg-3 col-md-12 mb-4">
+
+        <div class="footer-logo">
+
+          <img src="assets/images/logo/home.png" alt="TASMAC">
+
+          <div class="footer-logo-content">
+
+            <h5>
+              Tamil Nadu State Marketing Corporation Limited
+            </h5>
+
+            <p>
+              Government of Tamil Nadu Undertaking
+            </p>
+
+          </div>
+
+        </div>
+
       </div>
+
 
       <!-- Useful Links -->
-      <div class="col-md-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Useful Links</h6>
-        <!-- <p class="pb-2 mb-0"><a href="https://tncpe.gov.in/index.html"  target="_blank">Excise Department</a></p> -->
-        <p class="pb-2 mb-0"><a href="#" class="text-white" routerLink="/excise">Excise</a></p>
-        <p class="pb-2 mb-0"><a href="https://www.tn.gov.in/" target="_blank">TamilNadu Government</a></p>
-        <p class="pb-2 mb-0"><a href="#" class="text-white" routerLink="/privacypolicy">Privacy Policy</a></p>
-        <p class="pb-2 mb-0"><a href="#" class="text-white" routerLink="/termservice">Terms of Services</a></p>
-        <p class="pb-2 mb-0"><a href="#" class="text-white" routerLink="/disclaimer">Disclaimer</a></p>
+
+      <div class="col-lg-3 col-md-6 mb-4 footer-column">
+
+        <h6>Useful Links</h6>
+
+        <ul>
+
+          <li>
+            <a routerLink="/excise">
+              Excise
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.tn.gov.in/" target="_blank">
+              Tamil Nadu Government
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/privacypolicy">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/termservice">
+              Terms Of Services
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/disclaimer">
+              Disclaimer
+            </a>
+          </li>
+
+        </ul>
+
       </div>
-      <!-- Quick Links -->
-      <div class="col-md-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Regulation & Policies</h6>
-        <p class="pb-2 mb-0"><a href="#" class="text-white" routerLink="/rti">RTI</a></p>
-        <p class="pb-2 mb-0"><a href="#" class="text-white" routerLink="/policies">Policies</a></p>
-        <p class="pb-2 mb-0"><a href="#" class="text-white" routerLink="/actrules">Act & Rules</a></p>
-        <p class="pb-2 mb-0"><a href="#" class="text-white" routerLink="/online-permit">Online Permits</a></p>
-        <!-- <p class="pb-2 mb-0"><a href="https://importpermit-liquor.cpe.tn.gov.in/#/login" target="_blank">Online Import Permit - IFL</a></p>
-            <p class="pb-2 mb-0"><a href="https://exportpermit-beer.cpe.tn.gov.in/#/login" target="_blank">Online Export Permit - Beer</a></p> -->
-        <!-- <p class="pb-2 mb-0"><a href="https://www.tasmac.co.in/forms/taxes_and_duty_2024-03-01.pdf" target="_blank">Excise Duty / VAT Structure</a></p> -->
+
+
+      <!-- Policies -->
+
+      <div class="col-lg-3 col-md-6 mb-4 footer-column">
+
+        <h6>
+          Regulations & Policies
+        </h6>
+
+        <ul>
+
+          <li>
+            <a routerLink="/rti">
+              RTI
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/policies">
+              Policies
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/actrules">
+              Act & Rules
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/online-permit">
+              Online Permits
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/contact">
+              Contact Us
+            </a>
+          </li>
+
+        </ul>
+
       </div>
+
 
       <!-- Contact -->
-      <div class="col-md-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-3 font-weight-bold">Contact</h6>
-        <p class="mb-1">HEAD OFFICE</p>
-        <p class="pb-2 mb-0"><i class="fa fa-home me-2 text-danger"></i> CMDA Tower–II, IV Floor, Gandhi Irwin Bridge
-          Road, Egmore, Chennai - 600 008.</p>
-        <p class="pb-2 mb-0"><i class="fa fa-link me-2 text-danger"></i> tasmac&#64;gov.in</p>
-        <p class="pb-2 mb-0"><i class="fa fa-phone me-2 text-danger"></i> <a href="tel:04428521298">044-28521298</a>, <a
-            href="tel:04428524608">28524608</a>, <a href="tel:04428521970">28521970</a></p>
+
+      <div class="col-lg-3 col-md-6 mb-4 footer-column">
+
+        <h6>
+          Contact Us
+        </h6>
+
+        <p>
+          <i class="fa fa-map-marker"></i>
+
+          CMDA Tower-II, IV Floor,
+          Gandhi Irwin Bridge Road,
+          Egmore, Chennai - 600008
+        </p>
+
+        <p>
+          <i class="fa fa-envelope"></i>
+
+          tasmac&#64;gov.in
+        </p>
+
+        <p>
+
+          <i class="fa fa-phone"></i>
+
+          <a href="tel:04428521298">
+            044-28521298
+          </a>
+
+        </p>
+
       </div>
 
     </div>
+
   </div>
-  <div class="text-center py-3 bg-danger"
-    style="display: flex;justify-content: space-between;padding: 0px 10px 0px 10px;">
-    <p class="pb-0 mb-0">Copyright © 2026 TASMAC | All rights reserved.</p>
-    <p class="pb-0 mb-0">Designed & Developed by Bonton Softwares</p>
+
+
+  <!-- Bottom -->
+
+  <div class="footer-bottom">
+
+    <div>
+      Copyright © 2026 TASMAC |
+      All Rights Reserved
+    </div>
+
+    <div class="footer-stats">
+
+      <span>
+
+        <i class="fa fa-users"></i>
+
+        Total Visitors:
+        <b>{{visitorCount}}</b>
+
+      </span>
+
+      <span>
+
+        <i class="fa fa-calendar"></i>
+
+        Last Updated:
+        <b>{{lastUpdated}}</b>
+
+      </span>
+
+    </div>
+
+    <div>
+
+      Designed & Developed By
+
+      <b>
+        Bonton Softwares
+      </b>
+
+    </div>
+
   </div>
+
 </footer>
 
-
-<!-- <div class="footer">
-  <div class="footer-container">
-      <div class="footer-logo">
-          <img src="assets\images\banner-images\TASMAC-logo.jpg" alt="TASMAC Logo">
-          <p>Tamil Nadu State Marketing Corporation Limited.</p>
-      </div>
-      <div class="footer-column">
-          <h3 style="color:#ff6600;">Office</h3>
-          <p>CMDA Tower–II, IV Floor, Gandhi Irwin Bridge Road, Egmore, Chennai – 600 008.</p>
-          <p><i class="fa fa-envelope"></i> tasmac&#64;gov.in</p>
-          <p><i class="fa fa-phone"></i> 044–28521298, 28524608, 28521970.</p>
-      </div>
-      <div class="footer-column">
-          <h3 style="color:#ff6600;">Utilities</h3>
-          <ul>
-              <li><a href="#">Feedback</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Services</a></li>
-              <li><a href="#">Sitemap</a></li>
-              <li><a href="#">Disclaimer</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-          </ul>
-      </div>
-  <div class="footer-column">
-          <h3 style="color: #ff6600;">Quick Links</h3>
-          <ul>
-              <li><a href="/offices">Offices</a></li>
-              <li><a href="/suppliers">Suppliers</a></li>
-              <li><a href="/brands">Products</a></li>
-              <li><a href="shoplocator">Shop Locator</a></li>
-
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h3 style="color:#ff6600;">Regulation & Policies</h3>
-          <ul>
-              <li><a href="#">RTI</a></li>
-              <li><a href="#">Policies</a></li>
-              <li><a href="#">Act & Rules</a></li>
-          </ul>
-      </div>
-  </div>
-</div> -->
-
-<!-- <footer id="landing-footer" class="clearfix">
-    <div class="row clearfix">
-      <p id="copyright" class="col-2">
-        {{ footer.tagline }}
-        <a routerLink="{{ footer.developerlink }}">{{ footer.developer }}</a>
-      </p>
-      <div class="col-2" style="text-align: right">
-        <app-social></app-social>
-      </div>
-    </div>
-  </footer> -->
 }

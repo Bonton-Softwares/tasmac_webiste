@@ -1,59 +1,164 @@
 <section class="our-offices">
+
   <div class="container">
-    <h2 class="text-center" style="font-weight: bold;">Our Offices</h2>
-    <div class="row">
-      <div class="col-12">
-        <div class="office-details">
-          <div class="office-item d-flex align-items-center" [ngClass]="{'active': selectedOfficeType === 1}" (click)="getStaffByOffice(1)">
-            <div class="text">Head Office</div>
-          </div>
-          <div class="office-item d-flex align-items-center" [ngClass]="{'active': selectedOfficeType === 2}" (click)="getStaffByOffice(2)">
-            <div class="text">Regional Offices</div>
-          </div>
-          <div class="office-item d-flex align-items-center" [ngClass]="{'active': selectedOfficeType === 3}" (click)="getStaffByOffice(3)">
-            <div class="text">District Offices</div>
-          </div>
-          <div class="office-item d-flex align-items-center" [ngClass]="{'active': selectedOfficeType === 4}" (click)="getStaffByOffice(4)">
-            <div class="text">Depots</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-3">
-        <!-- <app-office-details *ngIf="selectedOfficeData" [officeData]="selectedOfficeData"></app-office-details> -->
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th colspan="12" class="bg-dark">
-                  <h2 class="py-0 m-0 text-white">Office Staff Details</h2>
-              </th>
-              </tr>
-              <tr>
-                <th>S.No</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Designation</th>
-                <th>Office</th>
-                <!-- <th>District</th> -->
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let office of staffDetails; let i = index">
-                <td>{{ i + 1 }}</td>
-                <td>{{ office.name ? office.name :'-' }}</td>
-                <td>{{ office.email ? office.email :'-' }}</td>
-                <td>{{ office.designation ? office.designation :'-' }}</td>
-                <td>{{ office.office ? office.office :'-' }}</td>
-                <!-- <td>{{ office.district ? office.district :'-' }}</td> -->
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+
+    <div class="office-header">
+      <p>
+        View Office Staff Information and Contact Details
+      </p>
+
     </div>
+
+
+    <!-- Tabs -->
+
+    <div class="office-tabs">
+
+      <div class="office-item" [ngClass]="{'active': selectedOfficeType===1}" (click)="getStaffByOffice(1)">
+
+        <i class="fa fa-building"></i>
+
+        <span>Head Office</span>
+
+      </div>
+
+
+      <div class="office-item" [ngClass]="{'active': selectedOfficeType===2}" (click)="getStaffByOffice(2)">
+
+        <i class="fa fa-map"></i>
+
+        <span>Regional Offices</span>
+
+      </div>
+
+
+      <div class="office-item" [ngClass]="{'active': selectedOfficeType===3}" (click)="getStaffByOffice(3)">
+
+        <i class="fa fa-university"></i>
+
+        <span>District Offices</span>
+
+      </div>
+
+
+      <div class="office-item" [ngClass]="{'active': selectedOfficeType===4}" (click)="getStaffByOffice(4)">
+
+        <i class="fa fa-truck"></i>
+
+        <span>Depots</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Table -->
+
+    <div class="staff-card">
+
+      <div class="table-title">
+
+        <div>
+
+          <h4>
+
+            <i class="fa fa-users"></i>
+
+            Office Staff Details
+
+          </h4>
+
+        </div>
+
+        <div class="staff-count">
+
+          Total :
+          {{staffDetails.length}}
+
+        </div>
+
+      </div>
+
+      <div class="table-responsive">
+
+        <table class="modern-table">
+
+          <thead>
+
+            <tr>
+
+              <th>S.No</th>
+
+              <th>Name</th>
+
+              <th>Email</th>
+
+              <th>Designation</th>
+
+              <th>Office</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr *ngFor="let office of staffDetails; let i=index">
+
+              <td>
+
+                {{i+1}}
+
+              </td>
+
+              <td>
+
+                <div class="name-cell">
+
+                  <div class="avatar">
+
+                    {{office.name?.charAt(0)}}
+
+                  </div>
+
+                  {{office.name || '-'}}
+
+                </div>
+
+              </td>
+
+              <td>
+
+                {{office.email || '-'}}
+
+              </td>
+
+              <td>
+
+                <span class="designation">
+
+                  {{office.designation || '-'}}
+
+                </span>
+
+              </td>
+
+              <td>
+
+                {{office.office || '-'}}
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="scroll-to-top" [ngClass]="{'show': isShow}" (click)="scrollToTop()">
-    ↑
-  </div>
 </section>

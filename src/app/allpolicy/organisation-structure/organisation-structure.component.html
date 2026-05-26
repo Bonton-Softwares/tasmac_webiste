@@ -1,17 +1,44 @@
-<!-- <p>organisation-structure works!</p> -->
-<div class="container my-4">
-    <h2 class="mb-2">Organisation Details</h2>
-    <div class="col-md-12 mt-4">
-        <h3 class="text-center">Board Of Directors</h3>
-        <p-organizationChart [value]="boardOfDirector" />
+<div class="org-page">
+    <!-- Header -->
+    <div class="page-header">
+        <h1>
+            Organisation Structure
+        </h1>
+        <p>
+            Tamil Nadu State Marketing Corporation Limited
+        </p>
     </div>
-    <div class="col-md-12 mt-4">
-        <h3 class="text-center">Tasmac Organisation Structure</h3>
-        <!-- <p-organizationChart [value]="tasmacOrganisatinStructure" /> -->
-         <img src="assets/images/tasmac_organisation_structure.png" width="100%">
+    <!-- Board of Directors -->
+    <div class="org-card">
+        <div class="section-header">
+            <i class="fa fa-users"></i>
+            <span>Board Of Directors</span>
+        </div>
+        <div class="chart-wrapper">
+            <p-organizationChart [value]="boardOfDirector">
+            </p-organizationChart>
+        </div>
     </div>
-    <div class="col-md-12 mt-4">
-        <h3 class="text-center">Corporate Organisation Structure</h3>
-        <p-organizationChart [value]="corporateOrganisatinStructure" />
+    <!-- TASMAC Structure -->
+    <div class="org-card mt-4">
+        <div class="section-header">
+            <i class="fa fa-sitemap"></i>
+            <span>TASMAC Organisation Structure</span>
+        </div>
+        <div class="chart-wrapper">
+            <p-organizationChart [value]="tasmacOrganisatinStructure">
+           </p-organizationChart>
+        </div>
+    </div>
+    <!-- Corporate Structure -->
+    <div class="org-card mt-4">
+        <div class="section-header">
+            <i class="fa fa-building"></i>
+            <span>Corporate Organisation Structure</span>
+        </div>
+        <div class="chart-wrapper">
+            <p-organizationChart [value]="corporateOrganisatinStructure">
+            </p-organizationChart>
+        </div>
     </div>
 </div>

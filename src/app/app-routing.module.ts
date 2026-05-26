@@ -5,6 +5,7 @@ import { OrganisationStructureComponent } from './allpolicy/organisation-structu
 import { InventoryComponent } from './inventory/inventory.component';
 import { ExciseComponent } from './allpolicy/excise/excise.component';
 import { OnlinePermitsComponent } from './allpolicy/online-permits/online-permits.component';
+import { ReportComponent } from './report/report.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -216,6 +217,10 @@ const routes: Routes = [
 	{
 		path: 'online-permit',
 		component: OnlinePermitsComponent
+	},
+	{
+		path: 'reports',
+		component: ReportComponent
 	},
 	{
 		path: '404',
