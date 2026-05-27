@@ -1,0 +1,151 @@
+.disclaimer-section {
+    background: #f4f7fb;
+    min-height: 100vh;
+}
+
+.disclaimer-header {
+    margin-bottom: 50px;
+}
+
+.disclaimer-badge {
+    display: inline-block;
+    background: #e8f0ff;
+    color: #0d6efd;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.disclaimer-header h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 12px;
+}
+
+.disclaimer-header p {
+    font-size: 15px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.disclaimer-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eef2f7;
+}
+
+.disclaimer-item {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.disclaimer-icon {
+    min-width: 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background: #0d6efd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.25);
+}
+
+.disclaimer-icon i {
+    font-size: 30px;
+    color: #fff;
+}
+
+.disclaimer-content h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 16px;
+}
+
+.disclaimer-content p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #6c757d;
+    margin-bottom: 14px;
+}
+
+.disclaimer-divider {
+    height: 1px;
+    background: #edf1f5;
+    margin: 35px 0;
+}
+
+.bg-success {
+    background: #198754 !important;
+    box-shadow: 0 6px 20px rgba(25, 135, 84, 0.25);
+}
+
+.bg-warning {
+    background: #ff9800 !important;
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.25);
+}
+
+@media(max-width:991px) {
+
+    .disclaimer-header h2 {
+        font-size: 32px;
+    }
+
+    .disclaimer-card {
+        padding: 30px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .disclaimer-item {
+        flex-direction: column;
+    }
+
+    .disclaimer-icon {
+        min-width: 60px;
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+    }
+
+    .disclaimer-icon i {
+        font-size: 24px;
+    }
+
+    .disclaimer-content h4 {
+        font-size: 22px;
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .disclaimer-section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .disclaimer-header h2 {
+        font-size: 26px;
+    }
+
+    .disclaimer-card {
+        padding: 22px;
+        border-radius: 22px;
+    }
+
+    .disclaimer-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+}

@@ -7,6 +7,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PascalCasePipe } from '../services/pascal-case.pipe';
 import { LoaderService } from '../services/loader.service';
 import { LoaderComponent } from '../loader/loader.component';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-stock-availability',
@@ -53,7 +54,7 @@ export class StockAvailabilityComponent {
       behavior: 'smooth'
     });
   }
-  constructor(private formService: FormService, private loader: LoaderService) { }
+  constructor(private formService: FormService, private loader: LoaderService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     // this.loadShopData();
@@ -70,6 +71,17 @@ export class StockAvailabilityComponent {
     } else {
       this.expandedRow = rowIndex;
     }
+  }
+
+  getMapUrl(shop: any): SafeResourceUrl {
+    const url =
+      'https://maps.google.com/maps?q=' +
+      shop.districtName +
+      ',' +
+      shop.talukaName +
+      '&output=embed';
+
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   getAllStocks() {

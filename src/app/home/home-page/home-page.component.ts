@@ -14,6 +14,9 @@ import { OrganizationComponent } from "../../organisation/organization.component
 import { AboutComponent } from "../../abouts/about.component";
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormService } from 'src/app/services/form.service';
 
 @Component({
 	selector: 'app-home-page',
@@ -31,6 +34,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 		CommonModule,
 		OrganizationComponent,
 		AboutComponent,
+		FormsModule,
+		DropdownModule
 	],
 })
 export class HomePageComponent implements OnInit {
@@ -44,7 +49,17 @@ export class HomePageComponent implements OnInit {
 	progressValue: number = 0;
 	targetValue: number = 48; // Set your target value here
 	shopData: any
-	constructor(private config: ConfigService, private http: HttpClient, private router: Router, private sanitizer: DomSanitizer) { }
+	districts: any[] = [];
+	brands: any[] = [];
+	stockDetails: any[] = [];
+	filteredStockDetails: any[] = [];
+	selectedDistrict: any = '';
+	selectedBrand: any = '';
+	searchTerm: string = '';
+	expandedRow: number | null = null;
+	lastUpdate: any = '';
+	selectedShop: any = null;
+	constructor(private config: ConfigService, private http: HttpClient, private router: Router, private sanitizer: DomSanitizer, private formService: FormService) { }
 
 	@HostListener('window:scroll')
 	checkScroll() {
@@ -76,14 +91,210 @@ export class HomePageComponent implements OnInit {
 			console.log(this.shopData.length)
 		})
 		this.loadDefaultMap();
+		this.getDistricts();
+		this.getBrands();
+		this.getAllStocks();
 	}
 
 	loadDefaultMap() {
 
+		this.selectedShop = null;
+
 		this.mapUrl =
-			this.sanitizer.bypassSecurityTrustResourceUrl(
-				'https://maps.google.com/maps?q=Chennai&t=&z=11&ie=UTF8&iwloc=&output=embed'
-			);
+			this.sanitizer
+				.bypassSecurityTrustResourceUrl(
+					'https://maps.google.com/maps?q=Chennai&t=&z=11&ie=UTF8&iwloc=&output=embed'
+				);
+
+	}
+	focusShopOnMap(shop: any) {
+
+		this.selectedShop = shop;
+
+		const query = [
+
+			'TASMAC',
+
+			shop.shopNumber,
+
+			shop.talukaName,
+
+			shop.districtName,
+
+			'Tamil Nadu'
+
+		]
+			.filter(Boolean)
+			.join(' ');
+
+		const mapUrl =
+
+			`https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+
+		this.mapUrl =
+			this.sanitizer
+				.bypassSecurityTrustResourceUrl(mapUrl);
+
+	}
+	getDistricts() {
+
+		this.formService
+			.getAllDistrict()
+			.subscribe((res: any) => {
+
+				this.districts = res.data;
+
+			});
+
+	}
+
+	getBrands() {
+
+		this.formService
+			.getAllBrands()
+			.subscribe((res: any) => {
+
+				this.brands = res.data;
+
+			});
+
+	}
+
+	getAllStocks() {
+
+		this.formService
+			.getAllStockDetails()
+			.subscribe((res: any) => {
+
+				this.stockDetails = res.data;
+
+				this.filteredStockDetails = res.data;
+
+				this.lastUpdate =
+					res.data[0]?.last_updated_time;
+
+			});
+
+	}
+
+	onDistrictChange() {
+
+		if (!this.selectedDistrict) {
+
+			this.filteredStockDetails =
+				this.stockDetails;
+
+			return;
+
+		}
+
+		const data = {
+
+			p_districtId: this.selectedDistrict
+
+		};
+
+		this.formService
+			.getStockDetailsByDistrict(data)
+			.subscribe((res: any) => {
+
+				this.filteredStockDetails =
+					res.data;
+
+			});
+
+	}
+
+	onBrandChange() {
+
+		if (!this.selectedBrand) {
+
+			this.filteredStockDetails =
+				this.stockDetails;
+
+			return;
+
+		}
+
+		const brandId =
+			Number(this.selectedBrand);
+
+		this.filteredStockDetails =
+			this.stockDetails
+				.map(shop => ({
+
+					...shop,
+
+					Stock_details:
+						shop.Stock_details.filter(
+							(item: any) =>
+								item.brandId === brandId
+						)
+
+				}))
+				.filter(
+					shop =>
+						shop.Stock_details.length > 0
+				);
+
+	}
+
+	filterProducts() {
+
+		const term =
+			this.searchTerm.toLowerCase();
+
+		this.filteredStockDetails =
+			this.stockDetails.filter(
+				(shop: any) => {
+
+					return (
+
+						shop.shopNumber
+							?.toString()
+							.includes(term)
+
+						||
+
+						shop.districtName
+							?.toLowerCase()
+							.includes(term)
+
+						||
+
+						shop.talukaName
+							?.toLowerCase()
+							.includes(term)
+
+						||
+
+						shop.Stock_details?.some(
+							(item: any) =>
+
+								item.productName
+									?.toLowerCase()
+									.includes(term)
+
+								||
+
+								item.brandName
+									?.toLowerCase()
+									.includes(term)
+
+						)
+
+					);
+
+				});
+
+	}
+
+	toggleExpand(index: number) {
+
+		this.expandedRow =
+			this.expandedRow === index
+				? null
+				: index;
 
 	}
 

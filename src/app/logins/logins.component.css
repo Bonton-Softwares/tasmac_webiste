@@ -1,0 +1,266 @@
+.portal-page {
+    min-height: relative;
+    background: linear-gradient(180deg, #f4f7fb 0%, #eef3fa 100%);
+    padding: 60px 0;
+}
+
+.portal-header {
+    margin-bottom: 45px;
+}
+
+.portal-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: #021b4d;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin-bottom: 18px;
+}
+
+.portal-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #021b4d;
+    margin-bottom: 10px;
+}
+
+.portal-header p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0;
+}
+
+.portal-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.portal-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 30px;
+    border-radius: 28px;
+    background: #fff;
+    border: 1px solid #e5ebf3;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
+    text-decoration: none;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.portal-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: #021b4d;
+}
+
+.portal-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .12);
+}
+
+.portal-number {
+    font-size: 42px;
+    font-weight: 800;
+    color: #dbe4f1;
+    min-width: 70px;
+}
+
+.portal-body {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex: 1;
+    min-width: 0;
+}
+
+.portal-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
+}
+
+.portal-icon i {
+    font-size: 34px;
+    color: #fff;
+}
+
+.portal-content {
+    min-width: 0;
+}
+
+.portal-content h4 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #021b4d;
+    line-height: 1.2;
+}
+
+.portal-content span {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6b7280;
+    word-break: break-word;
+}
+
+.portal-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 22px;
+    border-radius: 18px;
+    background: #f4f7fb;
+    transition: .3s;
+    flex-shrink: 0;
+}
+
+.portal-action span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #021b4d;
+    white-space: nowrap;
+}
+
+.portal-action i {
+    font-size: 18px;
+    color: #021b4d;
+}
+
+.portal-box:hover .portal-action {
+    background: #021b4d;
+}
+
+.portal-box:hover .portal-action span,
+.portal-box:hover .portal-action i {
+    color: #fff;
+}
+
+.bg-primary {
+    background: #0d6efd;
+}
+
+.bg-success {
+    background: #198754;
+}
+
+.bg-warning {
+    background: #ff9800;
+}
+
+.bg-danger {
+    background: #dc3545;
+}
+
+@media(max-width:991px) {
+
+    .portal-box {
+        padding: 24px;
+    }
+
+    .portal-content h4 {
+        font-size: 24px;
+    }
+
+    .portal-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .portal-icon i {
+        font-size: 28px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .portal-page {
+        padding: 40px 0;
+    }
+
+    .portal-header h2 {
+        font-size: 34px;
+    }
+
+    .portal-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .portal-number {
+        font-size: 34px;
+    }
+
+    .portal-action {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .portal-header h2 {
+        font-size: 28px;
+    }
+
+    .portal-header p {
+        font-size: 14px;
+    }
+
+    .portal-box {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .portal-body {
+        align-items: flex-start;
+    }
+
+    .portal-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 18px;
+    }
+
+    .portal-icon i {
+        font-size: 24px;
+    }
+
+    .portal-content h4 {
+        font-size: 20px;
+    }
+
+    .portal-content span {
+        font-size: 13px;
+    }
+
+    .portal-action {
+        padding: 12px 18px;
+    }
+
+    .portal-action span {
+        font-size: 13px;
+    }
+
+}

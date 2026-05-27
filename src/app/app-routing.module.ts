@@ -6,6 +6,8 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ExciseComponent } from './allpolicy/excise/excise.component';
 import { OnlinePermitsComponent } from './allpolicy/online-permits/online-permits.component';
 import { ReportComponent } from './report/report.component';
+import { GrievancesComponent } from './grievances/grievances.component';
+import { LoginsComponent } from './logins/logins.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -221,6 +223,14 @@ const routes: Routes = [
 	{
 		path: 'reports',
 		component: ReportComponent
+	},
+	{
+		path: 'grievances',
+		component: GrievancesComponent
+	},
+	{
+		path: 'logins',
+		component: LoginsComponent
 	},
 	{
 		path: '404',
