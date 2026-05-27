@@ -32,6 +32,10 @@ export class OrganisationStructureComponent {
           expanded: false,
         },
         {
+          label: 'Additional Director (BPE), Finance Department, Secretariat.',
+          expanded: false,
+        },
+        {
           label: 'The Managing Director, Tasmac Ltd.',
           expanded: false,
         }

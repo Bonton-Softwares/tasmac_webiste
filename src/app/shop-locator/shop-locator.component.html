@@ -1,85 +1,148 @@
 <app-loader></app-loader>
-<div class="shop-locator mt-4">
-  <div class="container text-center">
-    <h2 class="mb-3">SHOP LOCATIONS</h2>
-    <div class="row">
-      <div class="col-md-4 text-start">
-        <div class="form-group">
-          <h6 class="mb-3">Locate shop by using shop number</h6>
-        </div>
-        <!-- <div class="mb-3">
-          <label>Select RV Shop No</label>
-          <p-dropdown [filter]="true" appendTo="body" [options]="rvShopNos" optionLabel="name" optionValue="value"
-            dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}" [(ngModel)]="selectedRvShopNo"
-            ></p-dropdown>
-        </div>
-        <div class="form-group">
-          <h6 class="mb-3">OR</h6>
-        </div> -->
-        <div class="mb-3">
-          <label>Select Another RV Shop No</label>
-          <p-dropdown [filter]="true" appendTo="body" [options]="rvShopNos" optionLabel="RVShopsNo"
-            optionValue="RVShopsNo" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
-            [(ngModel)]="selectedRvShopNo" (onChange)="getRvShopDetails()"></p-dropdown>
-        </div>
-        <div class="mb-3">
-          <label>Select District</label>
-          <p-dropdown [filter]="true" appendTo="body" [options]="districts" optionLabel="revenue_district_name"
-            optionValue="revenue_district_id" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
-            (onChange)="filterRvAndTaluk()" [(ngModel)]="selectedDistrict"></p-dropdown>
-        </div>
-        <div class="mb-3">
-          <label>Select Taluk</label>
-          <p-dropdown [filter]="true" appendTo="body" [options]="taluks" optionLabel="taluk" optionValue="taluk_code"
-            dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}" [(ngModel)]="selectedTaluk"
-            (onChange)="filterRV()"></p-dropdown>
+
+<div class="shop-page">
+
+  <div class="container-fluid">
+
+    <div class="page-header">
+      <h1>SHOP LOCATOR</h1>
+      <p>Find nearby TASMAC RV Shops easily using Google Maps</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- FILTER SECTION -->
+      <div class="col-lg-4">
+
+        <div class="filter-card">
+
+          <div class="filter-title">
+            <i class="bi bi-geo-alt-fill"></i>
+            Search Shops
+          </div>
+
+          <div class="filter-group">
+            <label>RV Shop Number</label>
+
+            <p-dropdown [filter]="true" appendTo="body" [options]="rvShopNos" optionLabel="RVShopsNo"
+              optionValue="RVShopsNo" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
+              [(ngModel)]="selectedRvShopNo" (onChange)="getRvShopDetails()">
+            </p-dropdown>
+          </div>
+
+          <div class="filter-group">
+            <label>District</label>
+
+            <p-dropdown [filter]="true" appendTo="body" [options]="districts" optionLabel="revenue_district_name"
+              optionValue="revenue_district_id" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
+              (onChange)="filterRvAndTaluk()" [(ngModel)]="selectedDistrict">
+            </p-dropdown>
+          </div>
+
+          <div class="filter-group">
+            <label>Taluk</label>
+
+            <p-dropdown [filter]="true" appendTo="body" [options]="taluks" optionLabel="taluk" optionValue="taluk_code"
+              dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}" [(ngModel)]="selectedTaluk"
+              (onChange)="filterRV()">
+            </p-dropdown>
+          </div>
+
+          <button class="reset-btn" (click)="resetFilters()">
+            <i class="bi bi-arrow-clockwise"></i>
+            Reset Filters
+          </button>
+
         </div>
 
-        <div class="">
-          <button (click)="resetFilters()">Reset</button>
-        </div>
       </div>
-      <div class="col-md-8">
-        <div class="map-container">
-          <div #map id="map"></div>
-          <div class="filter-container">
-            <div class="filter-section">
-            </div>
+
+      <!-- MAP SECTION -->
+      <div class="col-lg-8">
+
+        <div class="map-card">
+
+          <div class="map-header">
+            <h3>Google Map View</h3>
           </div>
+
+          <div class="map-wrapper">
+
+            <iframe [src]="mapUrl" width="100%" height="550" style="border:0;border-radius:18px;" loading="lazy"
+              allowfullscreen>
+
+            </iframe>
+
         </div>
+
       </div>
+
     </div>
-    <div class="row mt-3">
-      <div class="col">
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th colspan="9" class="bg-dark">
-                  <h2 class="py-0 m-0 text-white">RV SHOPS DETAILS</h2>
-                </th>
-              </tr>
-              <tr>
-                <th>S.No.</th>
-                <th>RV Shop No</th>
-                <th>Address</th>
-                <th>Get Direction</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let shop of filteredShops; let i=index">
-                <td>{{ i+1 }}</td>
-                <td>{{ shop.RVShopsNo }}</td>
-                <td>{{ shop.Address }}</td>
-                <td (click)="navigate(shop.latitude,shop.longitude)"><a style="color: blue;cursor: pointer;">View</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+
   </div>
+
+  <!-- TABLE -->
+  <div class="shop-table-card mt-4">
+
+    <div class="table-header">
+      <h3>RV Shop Details</h3>
+      <span>Total Shops : {{ filteredShops.length }}</span>
+    </div>
+
+    <div class="table-responsive">
+
+      <table class="table custom-table">
+
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>RV Shop No</th>
+            <th>Address</th>
+            <th>Direction</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let shop of filteredShops; let i=index">
+
+            <td>{{ i + 1 }}</td>
+
+            <td>
+              <span class="shop-badge">
+                {{ shop.RVShopsNo }}
+              </span>
+            </td>
+
+            <td>{{ shop.Address }}</td>
+
+            <td>
+
+              <button class="direction-btn" (click)="navigate(shop.latitude,shop.longitude)">
+
+                <i class="bi bi-map"></i>
+                View Map
+
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
 </div>
-<div class="scroll-to-top" [ngClass]="{'show': isShow}" (click)="scrollToTop()">
-  ↑
+
+</div>
+
+<div class="scroll-top" [ngClass]="{'show-scroll': isShow}" (click)="scrollToTop()">
+
+  <i class="bi bi-arrow-up"></i>
+
 </div>

@@ -1,0 +1,152 @@
+<div class="grievance-wrapper">
+    <div class="container-fluid">
+        <div class="page-header">
+            <h2>Public Grievance Redressal</h2>
+            <p>
+                We are committed to transparency and efficient public service.
+                Use the channels below to report issues, file RTI requests,
+                or contact our support teams directly.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+                <div class="info-card">
+                    <div class="icon-box blue">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div>
+                        <h5>Toll-Free Helpline</h5>
+                        <p>Available Mon-Sat, 9 AM to 6 PM.</p>
+                        <span>1800-123-4567</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="icon-box green">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h5>WhatsApp Support</h5>
+                        <p>Quick queries and status updates.</p>
+                        <span>Message Us Online</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="icon-box gray">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                    <div>
+                        <h5>Right to Information</h5>
+                        <p>Submit formal RTI requests directly.</p>
+                        <span>View RTI Procedures</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="icon-box dark">
+                        <i class="bi bi-building"></i>
+                    </div>
+                    <div>
+                        <h5>Head Office</h5>
+                        <p>
+                            CMDA Tower-II, 4th Floor,<br>
+                            Gandhi Irwin Bridge Road,<br>
+                            Egmore, Chennai - 600008.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="form-card">
+
+                    <div class="form-header">
+                        <h3>Submit a New Grievance</h3>
+                        <p>
+                            Fill out the form below. Fields marked with an asterisk (*) are mandatory.
+                        </p>
+                    </div>
+
+                    <form>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label>Full Name *</label>
+                                <input type="text" class="form-control" placeholder="Enter your official name">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Mobile Number *</label>
+                                <input type="text" class="form-control" placeholder="10-digit mobile number">
+                            </div>
+
+                            <div class="col-12">
+                                <label>Grievance Category *</label>
+                                <select class="form-select">
+                                    <option>Select a category...</option>
+                                    <option>Shop Related</option>
+                                    <option>Staff Complaint</option>
+                                    <option>Product Quality</option>
+                                    <option>RTI Request</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label>Detailed Description *</label>
+                                <textarea rows="5" class="form-control"
+                                    placeholder="Please provide specific details including outlet numbers, dates, or product batches if applicable..."></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <label>Supporting Evidence (Optional)</label>
+
+                                <div class="upload-box" (click)="showPopup('File upload feature coming soon')">
+                                    <i class="bi bi-cloud-arrow-up"></i>
+                                    <h6>Click to upload or drag and drop</h6>
+                                    <p>PDF, JPG, or PNG (Max. 5MB)</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="btn-group-custom">
+                            <button type="button" class="btn btn-light"
+                                (click)="showPopup('Form cleared successfully')">
+                                Clear Form
+                            </button>
+
+                            <button type="button" class="btn btn-primary"
+                                (click)="showPopup('Grievance submitted successfully')">
+                                Submit Grievance
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="custom-popup" *ngIf="popupVisible">
+    <div class="popup-card">
+        <div class="popup-icon">
+            <i class="bi bi-check-circle-fill"></i>
+        </div>
+
+        <h4>Notification</h4>
+
+        <p>{{popupMessage}}</p>
+
+        <button class="btn btn-primary" (click)="closePopup()">
+            OK
+        </button>
+    </div>
+</div>

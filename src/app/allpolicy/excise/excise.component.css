@@ -1,0 +1,80 @@
+.excise-header h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.excise-header p {
+    font-size: 15px;
+    color: #6c757d;
+}
+
+.excise-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 30px 25px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eef2f7;
+}
+
+.excise-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    background: #0d6efd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.icon-box i {
+    font-size: 30px;
+    color: #fff;
+}
+
+.card-content h5 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #0b1f3a;
+}
+
+.card-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6c757d;
+    margin-bottom: 22px;
+}
+
+.card-content .btn {
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media(max-width:768px) {
+
+    .excise-header h2 {
+        font-size: 28px;
+    }
+
+    .excise-card {
+        padding: 24px 20px;
+    }
+
+    .card-content h5 {
+        font-size: 20px;
+    }
+
+}

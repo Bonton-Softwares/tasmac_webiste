@@ -4,144 +4,99 @@
 
   <div class="container">
 
-    <div class="row">
+    <div class="footer-top">
 
-      <!-- Logo Section -->
+      <!-- LOGO -->
+      <div class="footer-brand">
 
-      <div class="col-lg-3 col-md-12 mb-4">
+        <img src="assets/images/logo/logo.jpg" alt="TASMAC">
 
-        <div class="footer-logo">
+        <div class="brand-content">
 
-          <img src="assets/images/logo/home.png" alt="TASMAC">
+          <h5>
+            Tamil Nadu State Marketing
+            Corporation Limited
+          </h5>
 
-          <div class="footer-logo-content">
-
-            <h5>
-              Tamil Nadu State Marketing Corporation Limited
-            </h5>
-
-            <p>
-              Government of Tamil Nadu Undertaking
-            </p>
-
-          </div>
+          <p>
+            Government of Tamil Nadu Undertaking
+          </p>
 
         </div>
 
       </div>
 
+      <!-- USEFUL LINKS -->
+      <div class="footer-links">
 
-      <!-- Useful Links -->
+        <a routerLink="/excise">
+          Excise
+        </a>
 
-      <div class="col-lg-3 col-md-6 mb-4 footer-column">
+        <a href="https://www.tn.gov.in/" target="_blank">
 
-        <h6>Useful Links</h6>
+          TN Government
 
-        <ul>
+        </a>
 
-          <li>
-            <a routerLink="/excise">
-              Excise
-            </a>
-          </li>
+        <a routerLink="/privacypolicy">
+          Privacy Policy
+        </a>
 
-          <li>
-            <a href="https://www.tn.gov.in/" target="_blank">
-              Tamil Nadu Government
-            </a>
-          </li>
+        <a routerLink="/termservice">
+          Terms
+        </a>
 
-          <li>
-            <a routerLink="/privacypolicy">
-              Privacy Policy
-            </a>
-          </li>
+        <a routerLink="/disclaimer">
+          Disclaimer
+        </a>
 
-          <li>
-            <a routerLink="/termservice">
-              Terms Of Services
-            </a>
-          </li>
+        <a routerLink="/rti">
+          RTI & Policies
+        </a>
 
-          <li>
-            <a routerLink="/disclaimer">
-              Disclaimer
-            </a>
-          </li>
+        <!-- <a routerLink="/policies">
+          Policies
+        </a>
 
-        </ul>
+        <a routerLink="/actrules">
+          Act & Rules
+        </a>
 
-      </div>
+        <a routerLink="/online-permit">
+          Permits
+        </a> -->
 
-
-      <!-- Policies -->
-
-      <div class="col-lg-3 col-md-6 mb-4 footer-column">
-
-        <h6>
-          Regulations & Policies
-        </h6>
-
-        <ul>
-
-          <li>
-            <a routerLink="/rti">
-              RTI
-            </a>
-          </li>
-
-          <li>
-            <a routerLink="/policies">
-              Policies
-            </a>
-          </li>
-
-          <li>
-            <a routerLink="/actrules">
-              Act & Rules
-            </a>
-          </li>
-
-          <li>
-            <a routerLink="/online-permit">
-              Online Permits
-            </a>
-          </li>
-
-          <li>
-            <a routerLink="/contact">
-              Contact Us
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <!-- Contact -->
-
-      <div class="col-lg-3 col-md-6 mb-4 footer-column">
-
-        <h6>
+        <a routerLink="/contact">
           Contact Us
-        </h6>
+        </a>
 
-        <p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="footer-contact">
+
+        <div class="contact-item">
+
           <i class="fa fa-map-marker"></i>
 
-          CMDA Tower-II, IV Floor,
-          Gandhi Irwin Bridge Road,
-          Egmore, Chennai - 600008
-        </p>
+          <span>
+            Egmore, Chennai - 600008
+          </span>
 
-        <p>
+        </div>
+
+        <div class="contact-item">
+
           <i class="fa fa-envelope"></i>
 
-          tasmac&#64;gov.in
-        </p>
+          <span>
+            tasmac&#64;gov.in
+          </span>
 
-        <p>
+        </div>
+
+        <div class="contact-item">
 
           <i class="fa fa-phone"></i>
 
@@ -149,7 +104,7 @@
             044-28521298
           </a>
 
-        </p>
+        </div>
 
       </div>
 
@@ -157,45 +112,47 @@
 
   </div>
 
-
-  <!-- Bottom -->
+  <!-- BOTTOM -->
 
   <div class="footer-bottom">
 
-    <div>
-      Copyright © 2026 TASMAC |
-      All Rights Reserved
-    </div>
+    <div class="container footer-bottom-wrapper">
 
-    <div class="footer-stats">
+      <div class="copyright">
 
-      <span>
+        Copyright © 2026 TASMAC |
+        All Rights Reserved
 
-        <i class="fa fa-users"></i>
+      </div>
 
-        Total Visitors:
-        <b>{{visitorCount}}</b>
+      <div class="footer-stats">
 
-      </span>
+        <span>
 
-      <span>
+          <i class="fa fa-users"></i>
 
-        <i class="fa fa-calendar"></i>
+          Visitors:
+          <b>{{visitorCount}}</b>
 
-        Last Updated:
-        <b>{{lastUpdated}}</b>
+        </span>
 
-      </span>
+        <span>
 
-    </div>
+          <i class="fa fa-calendar"></i>
 
-    <div>
+          Updated:
+          <b>{{lastUpdated}}</b>
 
-      Designed & Developed By
+        </span>
 
-      <b>
-        Bonton Softwares
-      </b>
+      </div>
+
+      <div class="developer">
+
+        Designed By
+        <b>Bonton Softwares</b>
+
+      </div>
 
     </div>
 

@@ -9,12 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { FormService } from 'src/app/services/form.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { LoaderComponent } from 'src/app/loader/loader.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
 	selector: 'app-brands-page',
 	templateUrl: './brands-page.component.html',
 	standalone: true,
-	imports: [CompaniesBlockComponent, AsyncPipe, CommonModule, FormsModule, LoaderComponent],
+	imports: [CompaniesBlockComponent, AsyncPipe, CommonModule, FormsModule, LoaderComponent, RouterModule],
 	styleUrl: './brands-page.component.css',
 })
 export class brandsPageComponent implements OnInit {

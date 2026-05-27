@@ -1,207 +1,341 @@
-.brands-page {
-  position: relative;
-  padding: 20px;
-  color: #333;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  backdrop-filter: blur(5px);
-  margin: 20px;
+.price-directory-page {
+  min-height: 100vh;
+  background: #f4f5f7;
+  padding: 24px 0 50px
 }
 
-.brands-page::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/assets/images/liquor-background.jpg') no-repeat center center/cover;
-  filter: blur(10px);
-  z-index: -1;
-  border-radius: 10px;
+.page-header {
+  margin-bottom: 24px
 }
 
-h2 {
-  font-size: 1.5em;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+.page-header h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 6px
 }
 
-.tabs-container {
-  display: flex;
-}
-
-.tabs {
-  width: 200px;
-  border-right: 1px solid #c2c2c2;
-  padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.tab-button {
-  background-color: #eee;
-  border: none;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 5px 0;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
-}
-
-.tab-button.active {
-  background-color: #d19842;
-  color: white;
-  transform: scale(1.05);
-}
-
-.tab-button:hover {
-  background-color: #d19842;
-}
-
-.date-type-container {
-  text-align: center;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.date-type-container h2 {
-  font-size: 1.8em;
-  font-weight: 600;
-  color: #333;
+.page-header p {
   margin: 0;
+  color: #6b7280;
+  font-size: 15px
 }
 
-.date-type-container h3 {
-  font-size: 1.4em;
-  font-weight: 400;
-  color: #666;
-  margin-top: 5px;
-}
-
-h4 {
-  font-size: 1.5em;
-  font-weight: 500;
-  color: #888;
-  margin: 20px 0;
-  padding-left: 10px;
-}
-@media (max-width: 768px) {
-  .tabs {
-    width: 100%;
-    border-right: none;
-    border-bottom: 2px solid #ddd;
-    padding-right: 0;
-    flex-direction: row;
-  }
-
-  .tab-button {
-    flex: 1;
-    margin: 0;
-  }
-  
-  .search-bar {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s;
-  }
-  
-  .search-bar:focus {
-    border-color: #005B99;
-    outline: none;
-  }
-  
-  .search-bar::placeholder {
-    color: #aaa;
-  }
-}
-
-.header-actions {
+.top-toolbar {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px
 }
 
-.clear-button {
-  margin-left: 5px;
-  padding: 10px 10px;
-  background-color: #005B99;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.clear-button:hover {
-  background-color: #005B99;
-}
-
-.tabs {
-  display: flex;
-  /* gap: 5px; */
-}
-
-.tab-button {
-  padding: 8px 15px;
-  cursor: pointer;
-  border: none;
-  background-color: #f0f0f0;
+.search-box {
+  width: 320px;
+  height: 48px;
+  background: #fff;
+  border: 1px solid #d1d5db;
   border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .04)
 }
 
-.tab-button.active {
-  background-color: #005B99;
-  color: white;
+.search-box i {
+  color: #6b7280;
+  font-size: 16px;
+  margin-right: 10px
 }
 
-.tab-button:hover:not(.active) {
-  background-color: #e0e0e0;
-}
-
-
-.table-container table {
+.search-box input {
+  border: none;
+  outline: none;
   width: 100%;
-  border-collapse: collapse;
+  background: transparent;
+  font-size: 14px;
+  color: #111827
 }
 
-.table-container th, .table-container td {
-  padding: 8px;
-  border: 1px solid #ddd;
-  text-align: left;
+.search-box input::placeholder {
+  color: #9ca3af
+}
+
+.brand-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1
+}
+
+.brand-btn {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #111827;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  transition: .3s;
+  text-transform: uppercase
+}
+
+.brand-btn:hover {
+  background: #f3f4f6
+}
+
+.brand-btn.active {
+  background: #0f2747;
+  color: #fff;
+  border-color: #0f2747
+}
+
+.download-btn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 1px solid #111827;
+  background: #fff;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: .3s
+}
+
+.download-btn:hover {
+  background: #111827;
+  color: #fff
+}
+
+.consumer-alert {
+  background: #fde8e8;
+  border: 1px solid #f5c2c7;
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px
+}
+
+.alert-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.alert-icon i {
+  color: #dc2626;
+  font-size: 18px
+}
+
+.alert-content {
+  color: #991b1b;
+  font-size: 15px
+}
+
+.alert-content strong {
+  font-weight: 800
+}
+
+.alert-content span {
+  font-weight: 800
+}
+
+.price-table-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .04)
+}
+
+.company-section {
+  border-bottom: 1px solid #e5e7eb
+}
+
+.company-section:last-child {
+  border-bottom: none
+}
+
+.company-header {
+  background: #1f2937;
+  color: #fff;
+  padding: 16px 22px;
+  font-size: 18px;
+  font-weight: 700
+}
+
+.custom-table {
+  margin: 0
+}
+
+.custom-table thead th {
+  background: #f3f4f6;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 800;
+  border: none;
+  padding: 18px 20px;
+  vertical-align: middle;
+  white-space: nowrap
+}
+
+.custom-table tbody td {
+  padding: 22px 20px;
+  border-top: 1px solid #edf0f2;
+  vertical-align: middle
+}
+
+.brand-column {
+  min-width: 300px
+}
+
+.product-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px
+}
+
+.product-segment {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500
+}
+
+.price-cell {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0b7a43;
+  white-space: nowrap
+}
+
+.no-data {
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: #dc2626
 }
 
 .scroll-to-top {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  line-height: 40px;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  background: #0f2747;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  display: none; /* Initially hidden */
-  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+  z-index: 1000
 }
 
 .scroll-to-top.show {
-  display: block; /* Show when needed */
-  opacity: 0.8;
-}
-
-.scroll-to-top:hover {
   opacity: 1;
+  visibility: visible
 }
 
+.scroll-to-top i {
+  font-size: 20px
+}
+
+@media(max-width:991px) {
+
+  .top-toolbar {
+    flex-direction: column;
+    align-items: stretch
+  }
+
+  .search-box {
+    width: 100%
+  }
+
+  .download-btn {
+    width: 100%;
+    justify-content: center
+  }
+
+  .brand-tabs {
+    width: 100%
+  }
+
+  .brand-btn {
+    flex: 1 1 auto
+  }
+
+  .page-header h1 {
+    font-size: 30px
+  }
+
+  .custom-table thead th {
+    font-size: 12px;
+    padding: 14px
+  }
+
+  .custom-table tbody td {
+    padding: 16px 14px
+  }
+
+  .product-name {
+    font-size: 18px
+  }
+
+  .price-cell {
+    font-size: 16px
+  }
+
+}
+
+@media(max-width:768px) {
+
+  .price-directory-page {
+    padding: 18px 0 40px
+  }
+
+  .consumer-alert {
+    align-items: flex-start
+  }
+
+  .page-header h1 {
+    font-size: 26px
+  }
+
+  .page-header p {
+    font-size: 13px
+  }
+
+  .brand-btn {
+    font-size: 12px;
+    padding: 0 14px;
+    height: 38px
+  }
+
+  .company-header {
+    font-size: 16px
+  }
+
+  .custom-table {
+    min-width: 760px
+  }
+
+}

@@ -1,230 +1,262 @@
-<div class="container py-4">
-  <div class="py-4">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                CORPORATE OFFICE DETAILS
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <table class="table table-bordered border-primary">
-                  <thead>
-                    <tr>
-                      <th>Designation</th>
-                      <th>Phone No.</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Chairman</td>
-                      <td>044-28524059</td>
-                    </tr>
-                    <tr>
-                      <td>Managing Director</td>
-                      <td>044-28521201</td>
-                    </tr>
-                    <tr>
-                      <td>General Manager (Wholesale & Admin)</td>
-                      <td>044-28523129</td>
-                    </tr>
-                    <tr>
-                      <td>General Manager (Retail Vending)</td>
-                      <td>044-28542308</td>
-                    </tr>
-                    <tr>
-                      <td>General Manager (Finance)</td>
-                      <td>044-28522835</td>
-                    </tr>
-                    <tr>
-                      <td>Company Secretary</td>
-                      <td>044-28515977</td>
-                    </tr>
-                    <tr>
-                      <td>Control Room</td>
-                      <td>28542303</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                REGIONAL OFFICES
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Location</th>
-                      <th>Phone No.</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Chennai</td>
-                      <td>044-28542302</td>
-                    </tr>
-                    <tr>
-                      <td>Trichy</td>
-                      <td>0431-2482081</td>
-                    </tr>
-                    <tr>
-                      <td>Coimbatore</td>
-                      <td>0422-24316642</td>
-                    </tr>
-                    <tr>
-                      <td>Salem</td>
-                      <td>0427-2445934</td>
-                    </tr>
-                    <tr>
-                      <td>Madurai</td>
-                      <td>0452-2537225</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                OFFICE ADDRESS
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="card mb-4">
-                  <div class="card-body">
-                    <h4 class="card-title">Tamil Nadu State Marketing Corporation Limited</h4>
-                    <p class="card-text">
-                      CMDA Tower-II, IV Floor,<br>
-                      Gandhi Irwin Bridge Road,<br>
-                      Egmore, Chennai - 600 008.
-                    </p>
-                    <p class="card-text">
-                      <strong>Phone:</strong> 044-28521298, 28524608, 28521970.<br>
-                      <strong>Toll-Free:</strong>18004252015<br>
-                      <strong>WhatsApp Number:</strong> <span style="cursor: pointer;"
-                        (click)="raiserComplain('7397720230')">7397720230</span> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="contact-page py-5">
 
-      <div class="col-md-4">
-        <div class="accordion" id="accordionSecondLevel">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne2">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2"
-                aria-expanded="true" aria-controls="collapseOne2">
-                WEBSITE INFORMATION - OFFICER
-              </button>
-            </h2>
-            <div id="collapseOne2" class="accordion-collapse collapse show" aria-labelledby="headingOne2"
-              data-bs-parent="#accordionSecondLevel">
-              <div class="accordion-body">
-                <div class="card border-0">
-                  <div class="card-body p-0">
-                    <p class="card-text">
-                      <strong>Name:</strong> Tmt. R. Punitha Designation: District <br>
-                      <strong>Designation:</strong> Manager (HO)<br>
-                      <strong>Address:</strong> 5th Floor, C.M.D.A, Tower - II,<br>
-                      Gandhi Irwin Bridge Road,<br>
-                      Egmore, Chennai - 600008<br>
-                      <strong>Email ID:</strong> {{ email }}<br>
-                      <strong>Contact Number:</strong> 7397720230
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo2">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-                COMPLAINTS
-              </button>
-            </h2>
-            <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo2"
-              data-bs-parent="#accordionSecondLevel">
-              <div class="accordion-body">
-                <div *ngFor="let item of infoItems" class="info-card">
-                  <div *ngFor="let info of item.info">
-                    <strong>{{ info.label }}:</strong> {{ info.value }}<br>
-                    <strong>Toll-Free:</strong>18004252015<br>
-                    <strong>WhatsApp Number:</strong> <span style="cursor: pointer;"
-                      (click)="raiserComplain('7397720230')">7397720230</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingThree2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
-                            SUGGESTIONS
-                        </button>
-                      </h2>
-                      <div id="collapseThree2" class="accordion-collapse collapse" aria-labelledby="headingThree2" data-bs-parent="#accordionSecondLevel">
-                        <div class="accordion-body">
-                          <div *ngFor="let item of infoItems2" class="info-card">
-                            <div *ngFor="let info of item.info">
-                              <strong>{{ info.label }}:</strong> {{ info.value }}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
-        </div>
-      </div>
+  <div class="container">
 
+    <div class="page-header text-center mb-5">
 
-      <!-- <div class="col-md-4" *ngFor="let section of contactSections">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="section-header">
-                            <h2 class="section-title">{{ section.title }}</h2>
-                        </div>
-                        <div class="section-content">
-                            <ul class="contact-list" *ngIf="section.type === 'list'">
-                                <li *ngFor="let item of section.items">
-                                    <strong>{{ item.label }}:</strong> {{ item.value }}
-                                </li>
-                            </ul>
-                            <div class="contact-info" *ngIf="section.type === 'info'">
-                                <p *ngFor="let info of section.info">
-                                    <strong>{{ info.label }}:</strong>
-                                    <a *ngIf="info.label.toLowerCase() === 'email'" [href]="'mailto:' + info.value">
-                                        {{ info.value }}
-                                    </a>
-                                    <span *ngIf="info.label.toLowerCase() !== 'email'">
-                                        {{ info.value }}
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+      <span class="contact-badge">
+        TASMAC SUPPORT CENTER
+      </span>
+
+      <h2 class="mt-3">
+        Contact Information
+      </h2>
+
+      <p>
+        Corporate office details, regional offices and complaint support.
+      </p>
+
     </div>
+
+    <div class="row g-4">
+
+      <!-- CORPORATE OFFICE -->
+      <div class="col-lg-8">
+
+        <div class="info-section">
+
+          <div class="section-title">
+            <i class="fa fa-building"></i>
+            Corporate Office Details
+          </div>
+
+          <div class="table-responsive">
+
+            <table class="table custom-table align-middle">
+
+              <thead>
+
+                <tr>
+                  <th>Designation</th>
+                  <th>Phone Number</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Chairman</td>
+                  <td>044-28524059</td>
+                </tr>
+
+                <tr>
+                  <td>Managing Director</td>
+                  <td>044-28521201</td>
+                </tr>
+
+                <tr>
+                  <td>General Manager (Wholesale & Admin)</td>
+                  <td>044-28523129</td>
+                </tr>
+
+                <tr>
+                  <td>General Manager (Retail Vending)</td>
+                  <td>044-28542308</td>
+                </tr>
+
+                <tr>
+                  <td>General Manager (Finance)</td>
+                  <td>044-28522835</td>
+                </tr>
+
+                <tr>
+                  <td>Company Secretary</td>
+                  <td>044-28515977</td>
+                </tr>
+
+                <tr>
+                  <td>Control Room</td>
+                  <td>28542303</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- COMPLAINTS -->
+      <div class="col-lg-4">
+
+        <div class="support-card">
+
+          <div class="support-icon">
+            <i class="fa fa-headphones"></i>
+          </div>
+
+          <h3>Complaints Support</h3>
+
+          <p class="support-text">
+            Reach us for complaints and customer support assistance.
+          </p>
+
+          <div *ngFor="let item of infoItems" class="complaint-box">
+
+            <div *ngFor="let info of item.info">
+
+              <div class="complaint-item">
+
+                <label>{{ info.label }}</label>
+
+                <span>{{ info.value }}</span>
+
+              </div>
+
+              <div class="complaint-item">
+
+                <label>Toll-Free</label>
+
+                <span>18004252015</span>
+
+              </div>
+
+              <div class="complaint-item">
+
+                <label>WhatsApp</label>
+
+                <span class="whatsapp-link" (click)="raiserComplain('7397720230')">
+
+                  7397720230
+
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- REGIONAL OFFICES -->
+      <div class="col-lg-12">
+
+        <div class="info-section">
+
+          <div class="section-title">
+            <i class="fa fa-map-marker"></i>
+            Regional Offices
+          </div>
+
+          <div class="regional-grid">
+
+            <div class="regional-card">
+
+              <h5>Chennai</h5>
+
+              <span>044-28542302</span>
+
+            </div>
+
+            <div class="regional-card">
+
+              <h5>Trichy</h5>
+
+              <span>0431-2482081</span>
+
+            </div>
+
+            <div class="regional-card">
+
+              <h5>Coimbatore</h5>
+
+              <span>0422-24316642</span>
+
+            </div>
+
+            <div class="regional-card">
+
+              <h5>Salem</h5>
+
+              <span>0427-2445934</span>
+
+            </div>
+
+            <div class="regional-card">
+
+              <h5>Madurai</h5>
+
+              <span>0452-2537225</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- OFFICE ADDRESS -->
+      <div class="col-lg-12">
+
+        <div class="office-card">
+
+          <div class="office-icon">
+            <i class="fa fa-location-arrow"></i>
+          </div>
+
+          <div class="office-content">
+
+            <h3>
+              Tamil Nadu State Marketing Corporation Limited
+            </h3>
+
+            <p>
+              CMDA Tower-II, IV Floor,
+              Gandhi Irwin Bridge Road,
+              Egmore, Chennai - 600008.
+            </p>
+
+            <div class="office-contact">
+
+              <div>
+                <strong>Phone:</strong>
+                044-28521298, 28524608, 28521970
+              </div>
+
+              <div>
+                <strong>Toll-Free:</strong>
+                18004252015
+              </div>
+
+              <div>
+                <strong>WhatsApp:</strong>
+
+                <span class="whatsapp-link" (click)="raiserComplain('7397720230')">
+
+                  7397720230
+
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </div>

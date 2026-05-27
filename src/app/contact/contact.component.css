@@ -1,15 +1,305 @@
-.info-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-h3 {
-    margin-top: 0;
-    color: #007bff;
+.contact-page {
+    background: #f4f7fb;
+    min-height: 100vh;
 }
 
-strong {
-    margin-right: 5px;
+.page-header {
+    margin-bottom: 50px;
+}
+
+.contact-badge {
+    display: inline-block;
+    background: #e8f0ff;
+    color: #0d6efd;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.page-header h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 12px;
+}
+
+.page-header p {
+    font-size: 15px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.info-section {
+    background: #fff;
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 25px;
+}
+
+.section-title i {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    background: #0d6efd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+}
+
+.custom-table {
+    margin: 0;
+}
+
+.custom-table thead th {
+    background: #0b1f3a;
+    color: #fff;
+    padding: 16px;
+    border: none;
+    font-size: 14px;
+}
+
+.custom-table tbody td {
+    padding: 16px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background: #f8fbff;
+}
+
+.support-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.support-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    background: #198754;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(25, 135, 84, 0.25);
+}
+
+.support-icon i {
+    font-size: 32px;
+    color: #fff;
+}
+
+.support-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.support-text {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+.complaint-box {
+    background: #f8fbff;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    border: 1px solid #edf2f7;
+}
+
+.complaint-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    gap: 10px;
+}
+
+.complaint-item:last-child {
+    margin-bottom: 0;
+}
+
+.complaint-item label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b1f3a;
+}
+
+.complaint-item span {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.whatsapp-link {
+    color: #198754 !important;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.regional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.regional-card {
+    background: #f8fbff;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #edf2f7;
+}
+
+.regional-card:hover {
+    transform: translateY(-5px);
+    background: #eef5ff;
+}
+
+.regional-card h5 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.regional-card span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.office-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 35px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.office-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    background: #0d6efd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.25);
+}
+
+.office-icon i {
+    font-size: 32px;
+    color: #fff;
+}
+
+.office-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 15px;
+}
+
+.office-content p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #6c757d;
+    margin-bottom: 18px;
+}
+
+.office-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+@media(max-width:991px) {
+
+    .page-header h2 {
+        font-size: 34px;
+    }
+
+    .office-card {
+        padding: 28px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    .office-card {
+        flex-direction: column;
+    }
+
+    .complaint-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .contact-page {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .page-header h2 {
+        font-size: 24px;
+    }
+
+    .info-section,
+    .support-card,
+    .office-card {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .section-title i {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .support-card h3,
+    .office-content h3 {
+        font-size: 22px;
+    }
+
 }

@@ -43,9 +43,9 @@ export class NavigationComponent implements OnInit {
 		// },
 		{ id: 6, title: 'Stock Availability', link: '/stock-availability' },
 		{ id: 6, title: 'MRP Price List', link: '/brands' },
-		{ id: 8, title: 'Suppliers', link: '/suppliers' },
 		{ id: 9, title: 'Shop Locator', link: '/shoplocator' },
 		{ id: 9, title: 'Grievances', link: '/grievances' },
+		{ id: 8, title: 'Logins', link: '/logins' },
 		// { id: 2, title: 'About', link: '/about' },
 		// { id: 10, title: 'Contact', link: '/contact' }
 	];

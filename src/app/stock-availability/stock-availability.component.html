@@ -1,116 +1,322 @@
-<div class="shop-locator mt-4">
-    <div class="container text-center">
-        <h2 class="mb-3">Stock Availability</h2>
-        <!-- <div class="form-group text-start">
-            <h6 class="mb-3">Filters</h6>
-        </div> -->
-        <div class="row">
-            <div class="col-md-7"></div>
-            <div class="col-md-5 text-end">
-                <div class="search-container d-flex justify-content-between">
-                    <input type="text" class="form-control mb-2" [(ngModel)]="searchTerm" (input)="filterProducts()"
-                        placeholder="Search">
-                    <!-- <div>
-                        <button (click)="clearSearch()" class="btn btn-primary ms-1 mt-1">Clear</button>
-                    </div> -->
-                </div>
+<div class="shop-locator modern-stock-section mt-4">
+
+    <div class="container-fluid">
+
+        <div class="section-header text-center">
+
+            <div class="live-badge">
+                <i class="bi bi-broadcast"></i>
+                Live Stock Monitoring
             </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-3 mb-3 text-start">
-                <label>Select District</label>
-                <p-dropdown [filter]="true" appendTo="body" [options]="districts" optionLabel="revenue_district_name"
-                    optionValue="revenue_district_id" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
-                    (onChange)="filterRvAndTaluk()" [(ngModel)]="selectedDistrict"
-                    (onChange)="getStockDetailsByDistrict()"></p-dropdown>
-            </div>
-            <div class="col-md-3 mb-3 text-start">
-                <label>Select Taluk</label>
-                <p-dropdown [filter]="true" appendTo="body" [options]="taluks" optionLabel="taluk"
-                    optionValue="taluk_code" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
-                    [(ngModel)]="selectedTaluk" (onChange)="filterRV()" (onChange)="getStockDetailsByTaluk()"></p-dropdown>
-            </div>
-            <div class="col-md-3 mb-3 text-start">
-                <label>Select Shop No</label>
-                <p-dropdown [filter]="true" appendTo="body" [options]="rvShopNos" optionLabel="RVShopsNo"
-                    optionValue="RVShopsNo" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
-                    [(ngModel)]="selectedRvShopNo" (onChange)="filterByRvShop()"></p-dropdown>
-            </div>
-            <div class="col-md-3 mb-3 text-start">
-                <label>Select Liquor Type</label>
-                <p-dropdown [filter]="true" appendTo="body" [options]="brands" optionLabel="brandName"
-                    optionValue="brandId" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
-                    [(ngModel)]="selectedBrand" (onChange)="filterBrand()"></p-dropdown>
-            </div>
-            <div class="text-end">
-                <button (click)="resetFilters()">Reset</button>
-            </div>
+
+            <h2 class="mb-2">
+                Stock Availability
+            </h2>
+
+            <p>
+                Check real-time liquor stock availability across Tamil Nadu shops
+            </p>
+
         </div>
 
-        <div class="row mt-3">
-            <div class="col">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th colspan="12" class="bg-dark">
-                                    <h2 class="py-0 m-0 text-white text-center">RV Shops Stock Availability as on {{lastUpdate}}</h2>
-                                </th>
-                            </tr>
-                            <tr style="white-space: nowrap;">
-                                <th>S.No.</th>
-                                <th>RV Shop No</th>
-                                <th>District Name</th>
-                                <th>Taluk Name</th>
-                                <!-- <th>Last Update Date</th> -->
-                                <th>View</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <ng-container *ngFor="let shop of filteredStockDetails; let i = index">
-                                <tr (click)="toggleExpand(i)" style="cursor: pointer;">
-                                    <td>{{ i + 1 }}</td>
-                                    <td>{{ shop.shopNumber }}</td>
-                                    <td>{{ shop.districtName }}</td>
-                                    <td>{{ shop.talukaName }}</td>
-                                    <!-- <td>{{ shop?.last_updated_time }}</td> -->
-                                    <td>{{ expandedRow === i ? '▼' : '►' }}</td>
-                                </tr>
-                                <tr *ngIf="expandedRow === i">
-                                    <td colspan="9">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th>Brand Name</th>
-                                                    <th>Product Name</th>
-                                                    <th>Unit Size(ml)</th>
-                                                    <!-- <th>Available Bottle Stock</th> -->
-                                                    <th>Available Stock (In Bottles)</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <ng-container *ngFor="let stock of shop.Stock_details">
-                                                    <tr>
-                                                        <td>{{ stock.brandName ? stock.brandName : '-' }}</td>
-                                                        <td>{{ stock.productName ? stock.productName : '-' }}</td>
-                                                        <td>{{ stock.unitName ? stock.unitName : '-' }}</td>
-                                                        <!-- <td>{{ stock.bottles ? stock.bottles : '-' }}</td> -->
-                                                        <td>{{ stock.currentStock ? stock.currentStock : '0' }}</td>
-                                                    </tr>
-                                                </ng-container>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </ng-container>
-                        </tbody>
-                    </table>
+        <!-- FILTER SECTION -->
+
+        <div class="filter-wrapper">
+
+            <div class="row align-items-end">
+
+                <div class="col-lg-3 col-md-6 mb-3">
+
+                    <label class="filter-label">
+                        Select District
+                    </label>
+
+                    <p-dropdown [filter]="true" appendTo="body" [options]="districts"
+                        optionLabel="revenue_district_name" optionValue="revenue_district_id"
+                        dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}" (onChange)="filterRvAndTaluk()"
+                        [(ngModel)]="selectedDistrict" (onChange)="getStockDetailsByDistrict()">
+                    </p-dropdown>
+
                 </div>
+
+                <div class="col-lg-3 col-md-6 mb-3">
+
+                    <label class="filter-label">
+                        Select Taluk
+                    </label>
+
+                    <p-dropdown [filter]="true" appendTo="body" [options]="taluks" optionLabel="taluk"
+                        optionValue="taluk_code" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
+                        [(ngModel)]="selectedTaluk" (onChange)="filterRV()" (onChange)="getStockDetailsByTaluk()">
+                    </p-dropdown>
+
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-3">
+
+                    <label class="filter-label">
+                        Shop No
+                    </label>
+
+                    <p-dropdown [filter]="true" appendTo="body" [options]="rvShopNos" optionLabel="RVShopsNo"
+                        optionValue="RVShopsNo" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
+                        [(ngModel)]="selectedRvShopNo" (onChange)="filterByRvShop()">
+                    </p-dropdown>
+
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-3">
+
+                    <label class="filter-label">
+                        Liquor Type
+                    </label>
+
+                    <p-dropdown [filter]="true" appendTo="body" [options]="brands" optionLabel="brandName"
+                        optionValue="brandId" dropdownIcon="pi pi-angle-down" [style]="{'width':'100%'}"
+                        [(ngModel)]="selectedBrand" (onChange)="filterBrand()">
+                    </p-dropdown>
+
+                </div>
+
+                <div class="col-lg-2 mb-3">
+
+                    <div class="search-wrapper">
+
+                        <i class="bi bi-search"></i>
+
+                        <input type="text" class="form-control" [(ngModel)]="searchTerm" (input)="filterProducts()"
+                            placeholder="Search">
+
+                    </div>
+
+                </div>
+
             </div>
+
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-2">
+
+                <div class="stock-update">
+
+                    <div class="pulse-dot"></div>
+
+                    <span>
+                        Updated : {{lastUpdate}}
+                    </span>
+
+                </div>
+
+                <button class="reset-btn" (click)="resetFilters()">
+
+                    Reset Filters
+
+                </button>
+
+            </div>
+
         </div>
+
+        <!-- TABLE -->
+
+        <div class="stock-table-card mt-4">
+
+            <div class="table-responsive">
+
+                <table class="table modern-table align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                S.No
+                            </th>
+
+                            <th>
+                                Shop No
+                            </th>
+
+                            <th>
+                                District
+                            </th>
+
+                            <th>
+                                Taluk
+                            </th>
+
+                            <th>
+                                Map View
+                            </th>
+
+                            <th class="text-center">
+                                View
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <ng-container *ngFor="let shop of filteredStockDetails; let i=index">
+
+                            <!-- MAIN ROW -->
+
+                            <tr class="main-row">
+
+                                <td>
+                                    {{i+1}}
+                                </td>
+
+                                <td>
+
+                                    <div class="shop-number">
+
+                                        {{shop.shopNumber}}
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+
+                                    {{shop.districtName}}
+
+                                </td>
+
+                                <td>
+
+                                    {{shop.talukaName}}
+
+                                </td>
+
+                                <!-- MAP -->
+
+                                <td>
+
+                                    <iframe width="260" height="170" frameborder="0" style="border:0" loading="lazy"
+                                        allowfullscreen [src]="getMapUrl(shop)">
+                                    </iframe>
+
+                                </td>
+
+                                <!-- BUTTON -->
+
+                                <td class="text-center">
+
+                                    <button class="view-btn" (click)="toggleExpand(i)">
+
+                                        {{expandedRow===i ? 'Hide Details' : 'View Details'}}
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                            <!-- DETAILS -->
+
+                            <tr *ngIf="expandedRow===i">
+
+                                <td colspan="6" class="details-wrapper">
+
+                                    <div class="inner-table-wrapper">
+
+                                        <table class="table inner-stock-table">
+
+                                            <thead>
+
+                                                <tr>
+
+                                                    <th>
+                                                        Brand Name
+                                                    </th>
+
+                                                    <th>
+                                                        Product Name
+                                                    </th>
+
+                                                    <th>
+                                                        Unit Size
+                                                    </th>
+
+                                                    <th>
+                                                        Available Stock
+                                                    </th>
+
+                                                </tr>
+
+                                            </thead>
+
+                                            <tbody>
+
+                                                <tr *ngFor="let stock of shop.Stock_details">
+
+                                                    <td>
+
+                                                        <div class="brand-badge">
+
+                                                            {{stock.brandName || '-'}}
+
+                                                        </div>
+
+                                                    </td>
+
+                                                    <td>
+
+                                                        {{stock.productName || '-'}}
+
+                                                    </td>
+
+                                                    <td>
+
+                                                        {{stock.unitName || '-'}}
+
+                                                    </td>
+
+                                                    <td>
+
+                                                        <span class="stock-badge" [ngClass]="{
+                                                                'available-stock':stock.currentStock > 50,
+                                                                'limited-stock':stock.currentStock <= 50 && stock.currentStock > 0,
+                                                                'out-stock':stock.currentStock == 0
+                                                              }">
+
+                                                            {{stock.currentStock || 0}}
+
+                                                        </span>
+
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </ng-container>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
     </div>
+
 </div>
+
 <div class="scroll-to-top" [ngClass]="{'show': isShow}" (click)="scrollToTop()">
+
     ↑
+
 </div>
+
 <app-loader></app-loader>

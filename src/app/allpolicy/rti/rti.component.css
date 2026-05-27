@@ -1,0 +1,227 @@
+.policy-page {
+    background: #f4f7fb;
+    min-height: 100vh;
+}
+
+.page-title {
+    margin-bottom: 50px;
+}
+
+.top-badge {
+    display: inline-block;
+    background: #e8f0ff;
+    color: #0d6efd;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.page-title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 12px;
+}
+
+.page-title p {
+    font-size: 15px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.info-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eef2f7;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.icon-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    background: #0d6efd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.25);
+}
+
+.icon-circle i {
+    font-size: 30px;
+    color: #fff;
+}
+
+.card-top h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 5px;
+}
+
+.card-top p {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    border-radius: 18px;
+    background: #f8fbff;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 1px solid #edf2f7;
+}
+
+.document-item:hover {
+    background: #eef5ff;
+    transform: translateX(4px);
+}
+
+.doc-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.doc-left span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0b1f3a;
+    line-height: 1.6;
+}
+
+.pdf-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: #dc3545;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pdf-icon i {
+    font-size: 22px;
+    color: #fff;
+}
+
+.document-item .fa-arrow-right {
+    font-size: 16px;
+    color: #0d6efd;
+}
+
+.bg-success {
+    background: #198754 !important;
+    box-shadow: 0 8px 20px rgba(25, 135, 84, 0.25);
+}
+
+.bg-primary {
+    background: #0d6efd !important;
+}
+
+.bg-warning {
+    background: #ff9800 !important;
+}
+
+@media(max-width:991px) {
+
+    .page-title h2 {
+        font-size: 34px;
+    }
+
+    .info-card {
+        padding: 25px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .card-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+    }
+
+    .icon-circle i {
+        font-size: 24px;
+    }
+
+    .card-top h3 {
+        font-size: 24px;
+    }
+
+    .document-item {
+        padding: 16px;
+    }
+
+    .doc-left span {
+        font-size: 14px;
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .policy-page {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .page-title h2 {
+        font-size: 28px;
+    }
+
+    .info-card {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .document-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .document-item .fa-arrow-right {
+        display: none;
+    }
+
+    .doc-left {
+        align-items: flex-start;
+    }
+
+}
