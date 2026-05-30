@@ -44,35 +44,69 @@ export class brandsPageComponent implements OnInit {
 
 	getAllBrands() {
 		this.formService.getAllBrands().subscribe((res: any) => {
-			this.brands = res.data.sort((a: any, b: any) => {
-				return a.BrandName?.localeCompare(b.BrandName);
-			}).slice(0, -1);
-			this.brands.unshift({ brandId: 0, brandName: 'All' })
-		})
+
+			const allowedBrands = [
+				'BEER',
+				'BRANDY',
+				'RUM',
+				'VODKA',
+				'WHISKY',
+				'WINE'
+			];
+
+			this.brands = res.data.filter((item: any) =>
+				allowedBrands.includes(item.brandName?.toUpperCase())
+			);
+
+			this.brands.unshift({
+				brandId: 0,
+				brandName: 'ALL'
+			});
+
+		});
 	}
 
 	getAllProducts() {
 		this.loader.show();
+
 		this.formService.getAllLiquoreProducts().subscribe((res: any) => {
-			this.productList = res.data.slice(0, -1);
+
+			this.productList = res.data;
 			this.filteredProductList = [...this.productList];
+
 			this.loader.hide();
-		})
+		});
 	}
 
 	getLiquoreProductsByBrandId(brandId: any) {
+
 		const value = {
 			pBrandId: brandId
-		}
-		this.formService.getLiquoreProductsByBrandId(value).subscribe((res: any) => {
-			this.productList = res.data.slice(0, -1);
-			this.filteredProductList = [...this.productList];
-		})
+		};
+
+		this.formService.getLiquoreProductsByBrandId(value)
+			.subscribe((res: any) => {
+
+				this.productList = res.data;
+				this.filteredProductList = [...this.productList];
+
+			});
 	}
 
 	getUniqueUnitNames(products: any[]): string[] {
-		const unitNames = products.flatMap(product => product.productDetails.map(detail => detail.unitName));
-		return [...new Set(unitNames)];
+
+		const unitNames = products.flatMap(product =>
+			product.productDetails.map((detail: any) =>
+				detail.unitName?.trim()
+			)
+		);
+
+		const uniqueUnits = [...new Set(unitNames)];
+
+		return uniqueUnits.sort((a: string, b: string) =>
+			parseInt(a.replace('ml', '')) -
+			parseInt(b.replace('ml', ''))
+		);
 	}
 
 	getMrpByUnitName(productDetails: any, unitName: any): string {
