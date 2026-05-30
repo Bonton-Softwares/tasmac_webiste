@@ -1,11 +1,11 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 import { ConfigService } from '../shared/services/config.service';
 import { Footer } from './footer.model';
-import { AsyncPipe } from '@angular/common';
 import { SocialComponent } from '../social/social.component';
-import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-footer',
@@ -15,41 +15,55 @@ import { RouterLink } from '@angular/router';
     imports: [
         RouterLink,
         SocialComponent,
-        AsyncPipe,
-    ],
+        AsyncPipe
+    ]
 })
 export class FooterComponent implements OnInit {
-    // footer$: Observable<IFooter> = new Observable<IFooter>();
+
     visitorCount: number = 0;
     lastUpdated: string = '';
     footer$: Observable<Footer> = new Observable();
+
     constructor(private config: ConfigService) { }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.getPageData('pages', 6);
-        this.generateRandomData();
+        this.initializeVisitorCount();
+        this.setLastUpdatedDate();
     }
 
     getPageData(database: string, id?: number): void {
         this.footer$ = this.config.getSettings(database, id);
     }
 
-    generateRandomData() {
-        this.visitorCount =
-            Math.floor(
-                Math.random() * (999999 - 100000) + 100000
-            );
+    initializeVisitorCount(): void {
+
+        const storedCount = localStorage.getItem('visitorCount');
+
+        if (storedCount) {
+            this.visitorCount = Number(storedCount) + 1;
+        } else {
+            this.visitorCount = 40;
+        }
+
+        localStorage.setItem(
+            'visitorCount',
+            this.visitorCount.toString()
+        );
+    }
+
+    setLastUpdatedDate(): void {
+
         const today = new Date();
 
-        this.lastUpdated =
-            today.toLocaleDateString(
-                'en-GB',
-                {
-                    day: '2-digit',
-                    month: 'long',
-                    year: 'numeric'
-                }
-            );
-
+        this.lastUpdated = today.toLocaleDateString(
+            'en-GB',
+            {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+            }
+        );
     }
+
 }
